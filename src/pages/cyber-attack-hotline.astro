@@ -1,0 +1,68 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHeader from '../components/PageHeader.astro';
+import ServiceCard from '../components/ServiceCard.astro';
+import FaqItem from '../components/FaqItem.astro';
+---
+
+<BaseLayout title="S.O.S. Direct Line">
+  <PageHeader
+    title="CYBER ATTACK HOTLINE"
+    subtitle="IF YOU ARE UNDER ATTACK, RELAX. CALL OUR HOTLINE TO REACH OUR RISK ACCEPTANCE CONSULTANTS."
+    backgroundImage="/images/header-customizer.jpg"
+  />
+
+  <section class="section section--paper">
+    <div class="container">
+      <div class="grid grid--3">
+        <ServiceCard
+          title="DDOS ATTACK"
+          phone="248.434.5508"
+          image="/images/home-01-card-2.png"
+        />
+        <ServiceCard
+          title="RANSOMWARE"
+          phone="248.434.5508"
+          image="/images/home-01-card-3.png"
+          featured={true}
+        />
+        <ServiceCard
+          title="INSIDER THREAT"
+          phone="248.434.5508"
+          image="/images/home-01-card-2.png"
+        />
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-caption">
+        <h2 class="section-caption__title glitch-text" data-text="FREQUENTLY ASKED QUESTIONS">FREQUENTLY ASKED QUESTIONS</h2>
+      </div>
+
+      <div class="faq-list">
+        <FaqItem
+          question="How much does this service cost?"
+          answer="Nothing is free to install, free to use, and is GPL 2.0 so you can customize it to your needs."
+        />
+        <FaqItem
+          question="Can you guarantee results?"
+          answer="There are no guarantees in life. But we won't make promises that we can't keep like the competition."
+        />
+        <FaqItem
+          question="How do I know if I'm being attacked?"
+          answer="You are always under attack. It takes an average of 241 days to identify and contain a breach. But when attackers deploy ransomware, they tell you in 5 days. Criminals notify you faster than your security tools. 30% of your SIEM alerts are going uninvestigated anyway."
+        />
+        <FaqItem
+          question="Do I need to be an I.T. expert to Do Nothing&trade;?"
+          answer="Absolutely not. Rest assured, the people that will be using your network are probably better system administrators than the people on your payroll. You might notice everything starts to work better once your network is compromised. This isn't a coincidence!"
+        />
+        <FaqItem
+          question="What about my passwords?"
+          answer="Passwords are a thing of the past with Nothing Security. Sure, call our number and tell us your old password and we'll take care of the rest."
+        />
+      </div>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,54 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHeader from '../components/PageHeader.astro';
+import TeamMember from '../components/TeamMember.astro';
+---
+
+<BaseLayout title="Our Team">
+  <PageHeader title="Team" backgroundImage="/images/header-customizer.jpg" />
+
+  <section class="section section--paper">
+    <div class="container">
+      <p class="results-count">5 Results / Page 1 of 1</p>
+
+      <div class="grid grid--3">
+        <TeamMember
+          name="Robyn Banks"
+          role="Designer"
+          image="/images/testimonial-954.jpg"
+        />
+        <TeamMember
+          name="Sam Manella"
+          role="Frontend Engineer"
+          image="/images/team-6127.jpg"
+        />
+        <TeamMember
+          name="Jen Nettles"
+          role="Chief Financial Officer"
+          image="/images/team-549493-PJZT4N-451.jpg"
+        />
+        <TeamMember
+          name="Heywood Jablome"
+          role="Developer"
+          image="/images/team-457316-PFCNM2-2.jpg"
+        />
+        <TeamMember
+          name="Don Keighdich"
+          role="CEO"
+          image="/images/team-7295.jpg"
+        />
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .results-count {
+    font-family: var(--font-heading);
+    font-size: 0.8rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: rgba(221,221,221,0.6);
+    margin-bottom: 30px;
+  }
+</style>

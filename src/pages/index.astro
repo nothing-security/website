@@ -1,0 +1,1108 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ContactForm from '../components/ContactForm.astro';
+---
+
+<BaseLayout title="Home">
+  <!-- Hero Section - left aligned text, full-width bg -->
+  <section class="hero">
+    <img src="/images/header-home01-header.jpg" alt="" class="hero__bg" />
+    <div class="hero__overlay"></div>
+    <div class="hero__particles">
+      <hr style="left:50%;top:13%;width:8px;height:8px;" /><hr style="left:55%;top:1%;width:10px;height:6px;" />
+      <hr style="left:55%;top:37%;width:10px;height:8px;" /><hr style="left:76%;top:75%;width:9px;height:7px;" />
+      <hr style="left:31%;top:35%;width:6px;height:9px;" /><hr style="left:3%;top:44%;width:9px;height:6px;" />
+      <hr style="left:36%;top:45%;width:7px;height:10px;" /><hr style="left:5%;top:81%;width:8px;height:7px;" />
+    </div>
+    <div class="hero__content container">
+      <div class="hero__grid">
+        <div class="hero__text">
+          <i class="hero__decor"></i>
+          <h2 class="hero__title glitch-text" data-text="Total Security Oversight">Total Security Oversight</h2>
+          <h4 class="hero__subtitle">If you're using any of the three major cloud providers, you already have Nothing Security built-in.</h4>
+          <h4 class="hero__subtitle">You don't have to lift a finger to Do Nothing&trade;</h4>
+          <a href="#roi-section" class="btn btn--primary btn--large">Discover Nothing</a>
+        </div>
+        <div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ROI Charts Section -->
+  <section class="section section--paper" id="roi-section">
+    <div class="container">
+      <div class="section-caption">
+        <h6 class="section-caption__label"><span>The Numbers Don't Lie</span></h6>
+        <h2 class="section-caption__title glitch-text" data-text="RETURN ON DOING NOTHING">RETURN ON DOING NOTHING</h2>
+        <p class="section-caption__desc">See what happens when you stop paying for security theater</p>
+      </div>
+      <div class="grid grid--2">
+        <div class="chart-card">
+          <h4>Security Spending vs. Cybercrime Losses</h4>
+          <div class="bar-chart">
+            <div class="bar-chart__row">
+              <span class="bar-chart__label">2018</span>
+              <div class="bar-chart__bars">
+                <div class="bar-chart__bar bar-chart__bar--spend" style="width: 18%;">$96B</div>
+                <div class="bar-chart__bar bar-chart__bar--loss" style="width: 9%;">$45B</div>
+              </div>
+              <span class="bar-chart__ratio">2:1</span>
+            </div>
+            <div class="bar-chart__row">
+              <span class="bar-chart__label">2022</span>
+              <div class="bar-chart__bars">
+                <div class="bar-chart__bar bar-chart__bar--spend" style="width: 30%;">$150B</div>
+                <div class="bar-chart__bar bar-chart__bar--loss" style="width: 55%;">$6T</div>
+              </div>
+              <span class="bar-chart__ratio">1:40</span>
+            </div>
+            <div class="bar-chart__row">
+              <span class="bar-chart__label">2025</span>
+              <div class="bar-chart__bars">
+                <div class="bar-chart__bar bar-chart__bar--spend" style="width: 40%;">$213B</div>
+                <div class="bar-chart__bar bar-chart__bar--loss" style="width: 100%;">$10.5T</div>
+              </div>
+              <span class="bar-chart__ratio">1:50</span>
+            </div>
+          </div>
+          <div class="chart-legend">
+            <span class="chart-legend__item"><span class="chart-legend__color chart-legend__color--spend"></span>Security Spending</span>
+            <span class="chart-legend__item"><span class="chart-legend__color chart-legend__color--loss"></span>Cybercrime Losses</span>
+          </div>
+          <p class="chart-source">Sources: <a href="https://www.gartner.com/en/newsroom/press-releases/2025-07-29-gartner-forecasts-worldwide-end-user-spending-on-information-security-to-total-213-billion-us-dollars-in-2025" target="_blank">Gartner</a>, <a href="https://cybersecurityventures.com/cybercrime-damage-costs-10-trillion-by-2025/" target="_blank">Cybersecurity Ventures</a></p>
+        </div>
+        <div class="chart-card">
+          <h4>Where Your Security Budget Actually Goes</h4>
+          <div class="waste-chart">
+            <div class="waste-chart__item">
+              <div class="waste-chart__bar-bg">
+                <div class="waste-chart__bar-fill" style="width: 53%;">53%</div>
+              </div>
+              <span class="waste-chart__label">SIEM alerts that are false positives</span>
+            </div>
+            <div class="waste-chart__item">
+              <div class="waste-chart__bar-bg">
+                <div class="waste-chart__bar-fill" style="width: 50%;">50%</div>
+              </div>
+              <span class="waste-chart__label">Orgs that say their DLP is ineffective</span>
+            </div>
+            <div class="waste-chart__item">
+              <div class="waste-chart__bar-bg">
+                <div class="waste-chart__bar-fill waste-chart__bar-fill--red" style="width: 82%;">82%</div>
+              </div>
+              <span class="waste-chart__label">Detections that are malware-free (EDR miss)</span>
+            </div>
+            <div class="waste-chart__item">
+              <div class="waste-chart__bar-bg">
+                <div class="waste-chart__bar-fill waste-chart__bar-fill--red" style="width: 60%;">60%</div>
+              </div>
+              <span class="waste-chart__label">Breaches from known, unpatched vulns</span>
+            </div>
+            <div class="waste-chart__item">
+              <div class="waste-chart__bar-bg">
+                <div class="waste-chart__bar-fill" style="width: 30%;">30%</div>
+              </div>
+              <span class="waste-chart__label">Security alerts that go uninvestigated</span>
+            </div>
+          </div>
+          <p class="chart-source">Sources: <a href="https://www.verizon.com/business/resources/reports/dbir/" target="_blank">Verizon DBIR 2025</a>, <a href="https://www.vectra.ai/topics/edr-evasion" target="_blank">CrowdStrike/Vectra</a></p>
+        </div>
+      </div>
+
+      <div class="spacer-m"></div>
+
+      <div class="roi-callout">
+        <div class="roi-callout__inner">
+          <h3>Nothing Security ROI Calculator</h3>
+          <div class="roi-callout__grid">
+            <div class="roi-callout__stat">
+              <var>$0</var>
+              <span>Annual Cost of Nothing</span>
+            </div>
+            <div class="roi-callout__stat">
+              <var>76</var>
+              <span>Security Tools You Can Eliminate</span>
+            </div>
+            <div class="roi-callout__stat">
+              <var>$1,070</var>
+              <span>Saved Per Employee Per Year</span>
+            </div>
+            <div class="roi-callout__stat">
+              <var>100%</var>
+              <span>Reduction in False Positives</span>
+            </div>
+          </div>
+          <p class="roi-callout__note">The average enterprise runs 76 security tools. Companies with 50+ tools are <strong>8% worse</strong> at detecting threats. <a href="https://www.isaca.org/resources/news-and-trends/isaca-now-blog/2025/tool-sprawl-why-more-cyber-tools-make-you-less-secure" target="_blank">More tools = less security.</a></p>
+          <div class="spacer-s"></div>
+          <a href="/industry-outlook-2026/" class="btn btn--ghost">Download 2026 Industry Outlook</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 720° Protection - Service Cards -->
+  <section class="section animate-on-scroll" id="section-cards">
+    <div class="container">
+      <div class="section-caption">
+        <h6 class="section-caption__label"><span>Our Services</span></h6>
+        <h2 class="section-caption__title glitch-text" data-text="720° PROTECTION">720&deg; PROTECTION</h2>
+        <p class="section-caption__desc">Nothing for the Network. Nothing at the Endpoint.</p>
+      </div>
+      <div class="spacer-s"></div>
+      <div class="grid grid--3 negative-pull">
+        <a href="#link-pricing" class="product-card">
+          <div class="product-card__inner">
+            <div class="product-card__image">
+              <img src="/images/home-01-card-threats-ok.png" alt="Nothing Cloud" />
+            </div>
+            <div class="product-card__content">
+              <h4 class="capfont">Nothing Cloud</h4>
+              <p>AWS, Azure, and GCP firewalls scored 0% Security Effectiveness in independent testing. Nothing is already built-in.</p>
+              <span class="btn">Get Nothing Cloud</span>
+            </div>
+            <div class="product-card__particles"><hr /><hr /><hr /></div>
+            <span class="product-card__hov"></span>
+          </div>
+        </a>
+        <a href="#link-pricing" class="product-card product-card--featured">
+          <div class="product-card__inner product-card__inner--accent">
+            <div class="product-card__image">
+              <img src="/images/home-01-card-2.png" alt="Nothing Data Loss Prevention" />
+            </div>
+            <div class="product-card__content">
+              <h4 class="capfont">Nothing Data Loss Prevention</h4>
+              <p>50% of organizations say their DLP is ineffective. 1% of users cause 90% of alerts. You're paying for noise.</p>
+              <span class="btn">Get Nothing DLP</span>
+            </div>
+            <div class="product-card__particles"><hr /><hr /><hr /></div>
+            <span class="product-card__hov"></span>
+          </div>
+        </a>
+        <a href="#link-pricing" class="product-card">
+          <div class="product-card__inner">
+            <div class="product-card__image">
+              <img src="/images/home-01-card-3.png" alt="Nothing Endpoint" />
+            </div>
+            <div class="product-card__content">
+              <h4 class="capfont">Nothing Endpoint</h4>
+              <p>82% of detections are malware-free. Attackers bypass EDR entirely. CrowdStrike cost the Fortune 500 $5.4B in one day.</p>
+              <span class="btn">Get Nothing Endpoint</span>
+            </div>
+            <div class="product-card__particles"><hr /><hr /><hr /></div>
+            <span class="product-card__hov"></span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Customers Say - Testimonial Carousel -->
+  <section class="section">
+    <div class="container">
+      <h3 class="glitch-text section-heading" data-text="CUSTOMERS SAY">CUSTOMERS SAY</h3>
+      <div class="testimonial-row">
+        <div class="testimonial-track">
+          <div class="testimonial-item">
+            <div class="testimonial-item__image">
+              <img src="/images/team-2160690.jpg" alt="Norma Stitz" />
+            </div>
+            <div class="testimonial-item__content">
+              <div class="testimonial-item__cap">
+                <h5 class="capfont"><a href="/testimonials/">Norma Stitz</a></h5>
+                <p class="testimonial-item__role">DevOps Engineer</p>
+              </div>
+              <p class="testimonial-item__quote">"Don't expect your DLP solution to work as well as this! Do Nothing&trade;!"</p>
+            </div>
+          </div>
+          <div class="testimonial-item">
+            <div class="testimonial-item__image">
+              <img src="/images/testimonial-O6YV3J0.jpg" alt="Sergei Bhetenov" />
+            </div>
+            <div class="testimonial-item__content">
+              <div class="testimonial-item__cap">
+                <h5 class="capfont"><a href="/testimonials/">Sergei Bhetenov</a></h5>
+                <p class="testimonial-item__role">VP Of Business Development</p>
+              </div>
+              <p class="testimonial-item__quote">"Our employees are no longer afraid of getting hacked."</p>
+            </div>
+          </div>
+          <div class="testimonial-item">
+            <div class="testimonial-item__image">
+              <img src="/images/testimonial-O70LL00.jpg" alt="Michael Itoris" />
+            </div>
+            <div class="testimonial-item__content">
+              <div class="testimonial-item__cap">
+                <h5 class="capfont"><a href="/testimonials/">Michael Itoris</a></h5>
+                <p class="testimonial-item__role">Chief Information Security Officer</p>
+              </div>
+              <p class="testimonial-item__quote">"Don't settle for expensive security solutions. Nothing works!"</p>
+            </div>
+          </div>
+          <div class="testimonial-item">
+            <div class="testimonial-item__image">
+              <img src="/images/testimonial-677993-PPUB4P-401.jpg" alt="Anita Goodchit" />
+            </div>
+            <div class="testimonial-item__content">
+              <div class="testimonial-item__cap">
+                <h5 class="capfont"><a href="/testimonials/">Anita Goodchit</a></h5>
+                <p class="testimonial-item__role">Chief Executive Officer</p>
+              </div>
+              <p class="testimonial-item__quote">"Our cloud platform came with Nothing already installed. It's so easy."</p>
+            </div>
+          </div>
+          <!-- Duplicated items for seamless loop -->
+          <div class="testimonial-item" aria-hidden="true">
+            <div class="testimonial-item__image">
+              <img src="/images/team-2160690.jpg" alt="Norma Stitz" />
+            </div>
+            <div class="testimonial-item__content">
+              <div class="testimonial-item__cap">
+                <h5 class="capfont">Norma Stitz</h5>
+                <p class="testimonial-item__role">DevOps Engineer</p>
+              </div>
+              <p class="testimonial-item__quote">"Don't expect your DLP solution to work as well as this! Do Nothing&trade;!"</p>
+            </div>
+          </div>
+          <div class="testimonial-item" aria-hidden="true">
+            <div class="testimonial-item__image">
+              <img src="/images/testimonial-O6YV3J0.jpg" alt="Sergei Bhetenov" />
+            </div>
+            <div class="testimonial-item__content">
+              <div class="testimonial-item__cap">
+                <h5 class="capfont">Sergei Bhetenov</h5>
+                <p class="testimonial-item__role">VP Of Business Development</p>
+              </div>
+              <p class="testimonial-item__quote">"Our employees are no longer afraid of getting hacked."</p>
+            </div>
+          </div>
+          <div class="testimonial-item" aria-hidden="true">
+            <div class="testimonial-item__image">
+              <img src="/images/testimonial-O70LL00.jpg" alt="Michael Itoris" />
+            </div>
+            <div class="testimonial-item__content">
+              <div class="testimonial-item__cap">
+                <h5 class="capfont">Michael Itoris</h5>
+                <p class="testimonial-item__role">Chief Information Security Officer</p>
+              </div>
+              <p class="testimonial-item__quote">"Don't settle for expensive security solutions. Nothing works!"</p>
+            </div>
+          </div>
+          <div class="testimonial-item" aria-hidden="true">
+            <div class="testimonial-item__image">
+              <img src="/images/testimonial-677993-PPUB4P-401.jpg" alt="Anita Goodchit" />
+            </div>
+            <div class="testimonial-item__content">
+              <div class="testimonial-item__cap">
+                <h5 class="capfont">Anita Goodchit</h5>
+                <p class="testimonial-item__role">Chief Executive Officer</p>
+              </div>
+              <p class="testimonial-item__quote">"Our cloud platform came with Nothing already installed. It's so easy."</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Security Minimalism Training / Event -->
+  <section class="section">
+    <div class="container">
+      <div class="section-caption">
+        <h6 class="section-caption__label"><span>Learn Nothing</span></h6>
+        <h2 class="section-caption__title glitch-text" data-text="Security Minimalism Training">Security Minimalism Training</h2>
+        <p class="section-caption__desc">Learn how you can apply the principles of Security Minimalism in your organization</p>
+      </div>
+
+      <div class="event-featured-card animate-on-scroll">
+        <div class="event-featured-card__image">
+          <img src="/images/post-17.jpg" alt="Come See Us At Black Hat" />
+        </div>
+        <div class="event-featured-card__content">
+          <p class="event-meta">
+            <span class="event-meta__cat">Conference</span>
+            <span class="event-meta__date">August 1&ndash;6, 2026</span>
+          </p>
+          <h2 class="capfont glitch-text" data-text="Come See Us At Black Hat">Come See Us At Black Hat 2026</h2>
+          <p>Vendors will spend $3,495 per badge to showcase security products that score 0% in independent testing. We'll be outside the vendor area giving lightning talks behind the dumpster at the Delano. Admission is free, like our product.</p>
+          <a href="/events/" class="btn btn--primary btn--large">Discover Nothing</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section with BG -->
+  <section class="contact-section">
+    <div class="container">
+      <div class="section-caption">
+        <h2 class="section-caption__title glitch-text" data-text="Stop Wasting Your Money on Security 'Solutions'">Stop Wasting Your Money on Security 'Solutions'</h2>
+        <p class="section-caption__desc">The industry spends $213B on security and loses $10.5 trillion to cybercrime. For every dollar spent on security, fifty dollars are lost to criminals. The ratio got 100x worse since 2018.</p>
+      </div>
+      <div class="spacer-s"></div>
+      <div class="contact-grid">
+        <div class="contact-info-col">
+          <h5 class="glitch-text" data-text="Let's Touch Base">Let's Touch Base</h5>
+          <h3>We Love Touching Base: Nothing Can Help You</h3>
+          <div class="spacer-xs"></div>
+          <h6 class="section-caption__label"><span>Phone Contacts</span></h6>
+          <p class="small-text">Hotline: 248.434.5508</p>
+          <div class="spacer-xs"></div>
+          <h6 class="section-caption__label"><span>Email Contacts</span></h6>
+          <p class="small-text">contact@nothingsecurity.com</p>
+        </div>
+        <div class="contact-form-col">
+          <ContactForm />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Section -->
+  <section class="section" id="link-pricing">
+    <div class="container">
+      <div class="section-caption">
+        <h6 class="section-caption__label"><span>Pricing Plans</span></h6>
+        <h2 class="section-caption__title glitch-text" data-text="Nothing Is Free">Nothing Is Free</h2>
+        <p class="section-caption__desc">Do Nothing&trade; today and save time and effort</p>
+      </div>
+      <div class="spacer-s"></div>
+      <div class="grid grid--4">
+        <div class="pricing-card">
+          <div class="pricing-card__inner">
+            <span class="material-icons pricing-card__icon">emoji_events</span>
+            <h4 class="capfont">Individual</h4>
+            <h6>Nothing For The Home</h6>
+            <div class="pricing-card__price"><span class="pricing-card__coin">$</span><var>Free</var></div>
+            <ul class="pricing-card__features">
+              <li class="active"><span class="material-icons">check</span> Self-Service Support</li>
+              <li class="inactive"><span class="material-icons">close</span> Unencrypted Connections</li>
+              <li class="inactive"><span class="material-icons">close</span> Supports Bitcoin</li>
+              <li class="inactive"><span class="material-icons">close</span> Fully Passive</li>
+            </ul>
+            <a href="#" class="btn btn--primary pricing-card__btn">Download Now</a>
+          </div>
+        </div>
+        <div class="pricing-card">
+          <div class="pricing-card__inner">
+            <span class="material-icons pricing-card__icon">credit_card</span>
+            <h4 class="capfont">Retail</h4>
+            <h6>Nothing For eCommerce</h6>
+            <div class="pricing-card__price"><span class="pricing-card__coin">$</span><var>Free</var></div>
+            <ul class="pricing-card__features">
+              <li class="active"><span class="material-icons">check</span> Self-Service Support</li>
+              <li class="active"><span class="material-icons">check</span> Unencrypted Connections</li>
+              <li class="inactive"><span class="material-icons">close</span> Supports Bitcoin</li>
+              <li class="inactive"><span class="material-icons">close</span> Fully Passive</li>
+            </ul>
+            <a href="#" class="btn btn--primary pricing-card__btn">Download Now</a>
+          </div>
+        </div>
+        <div class="pricing-card pricing-card--featured">
+          <div class="pricing-card__inner pricing-card__inner--accent">
+            <span class="material-icons pricing-card__icon">groups</span>
+            <h4 class="capfont">Business</h4>
+            <h6>Most Popular</h6>
+            <div class="pricing-card__price"><span class="pricing-card__coin">$</span><var>Free</var></div>
+            <ul class="pricing-card__features">
+              <li class="active"><span class="material-icons">check</span> Self-Service Support</li>
+              <li class="active"><span class="material-icons">check</span> Unencrypted Connections</li>
+              <li class="active"><span class="material-icons">check</span> Supports Bitcoin</li>
+              <li class="inactive"><span class="material-icons">close</span> Fully Passive</li>
+            </ul>
+            <a href="#" class="btn btn--primary pricing-card__btn">Download Now</a>
+          </div>
+        </div>
+        <div class="pricing-card">
+          <div class="pricing-card__inner">
+            <span class="material-icons pricing-card__icon">trending_up</span>
+            <h4 class="capfont">Enterprise</h4>
+            <h6>Total Security Oversight</h6>
+            <div class="pricing-card__price"><span class="pricing-card__coin">$</span><var>Free</var></div>
+            <ul class="pricing-card__features">
+              <li class="active"><span class="material-icons">check</span> Self-Service Support</li>
+              <li class="active"><span class="material-icons">check</span> Unencrypted Connections</li>
+              <li class="active"><span class="material-icons">check</span> Supports Bitcoin</li>
+              <li class="active"><span class="material-icons">check</span> Fully Passive</li>
+            </ul>
+            <a href="#" class="btn btn--primary pricing-card__btn">Download Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  /* === Hero === */
+  .hero {
+    position: relative;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    overflow: visible;
+    background: #0a0a1a url('/images/header-home01-header.jpg') center top / cover no-repeat fixed;
+  }
+  .hero__bg {
+    display: none;
+  }
+  .hero__overlay {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: linear-gradient(
+      135deg,
+      rgba(10, 2, 50, 0.55) 0%,
+      rgba(95, 0, 144, 0.25) 40%,
+      rgba(20, 103, 171, 0.15) 70%,
+      rgba(0, 0, 0, 0.4) 100%
+    );
+    z-index: 1;
+  }
+  .hero__particles {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: 2;
+    pointer-events: none;
+  }
+  .hero__particles hr {
+    position: absolute;
+    border: none;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(45deg, var(--color-gradient-start), var(--color-gradient-end));
+    opacity: 0.6;
+    animation: particle-float 2.5s ease-in-out infinite, particle-flicker 1.8s steps(2) infinite;
+  }
+  .hero__particles hr:nth-child(2n) {
+    animation-delay: -0.7s, -0.3s;
+    opacity: 0.4;
+  }
+  .hero__particles hr:nth-child(3n) {
+    animation-delay: -1.2s, -0.9s;
+    opacity: 0.8;
+  }
+  .hero__particles hr:nth-child(4n) {
+    animation-delay: -0.4s, -1.5s;
+    opacity: 0.5;
+  }
+  @keyframes particle-float {
+    0%, 100% { transform: translateY(0) translateX(0); }
+    25% { transform: translateY(-8px) translateX(3px); }
+    50% { transform: translateY(-14px) translateX(-2px); }
+    75% { transform: translateY(-6px) translateX(4px); }
+  }
+  @keyframes particle-flicker {
+    0%, 49% { opacity: inherit; }
+    50%, 100% { opacity: 0.15; }
+  }
+  .hero__content {
+    position: relative;
+    z-index: 3;
+    padding: 100px 20px 100px;
+  }
+  .hero__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+  }
+  .hero__decor {
+    display: block;
+    width: 50px;
+    height: 4px;
+    background: linear-gradient(45deg, var(--color-gradient-start), var(--color-gradient-end));
+    margin-bottom: 24px;
+  }
+  .hero__title {
+    font-family: var(--font-heading);
+    font-size: 4.2rem;
+    font-weight: 700;
+    color: var(--color-white);
+    margin-bottom: 24px;
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    text-transform: uppercase;
+  }
+  .hero__subtitle {
+    color: rgba(255,255,255,0.8);
+    font-weight: 400;
+    margin-bottom: 8px;
+    font-size: 1.1rem;
+    line-height: 1.5;
+  }
+  .hero__subtitle:last-of-type {
+    margin-bottom: 32px;
+  }
+
+  /* === Negative pull (card overlap effect) === */
+  .negative-pull {
+    margin-top: -50px;
+    position: relative;
+    z-index: 2;
+  }
+
+  /* === Product Cards === */
+  .product-card {
+    display: block;
+    text-decoration: none;
+    color: var(--color-text);
+  }
+  .product-card__inner {
+    background: linear-gradient(45deg, var(--color-bg-primary) 0%, var(--color-bg-primary-light) 100%);
+    padding: 24px 30px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    transition: transform 0.3s ease;
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .product-card__inner--accent {
+    background: linear-gradient(45deg, #0d0232 0%, #5f0090 50%, #1467ab 100%);
+  }
+  .product-card:hover .product-card__inner {
+    transform: translateY(-6px);
+  }
+  .product-card__image {
+    margin-bottom: 14px;
+  }
+  .product-card__image img {
+    max-height: 130px;
+    width: auto;
+  }
+  .product-card__content h4 {
+    color: var(--color-white);
+    margin-bottom: 8px;
+  }
+  .product-card__content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  .product-card__content p {
+    font-size: 0.9rem;
+    margin-bottom: 14px;
+    color: rgba(255,255,255,0.7);
+    flex: 1;
+  }
+  .product-card__content .btn {
+    align-self: center;
+  }
+  .product-card__hov {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: linear-gradient(45deg, #0d0232 0%, #5f0090 50%, #1467ab 100%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: 0;
+  }
+  .product-card:hover .product-card__hov {
+    opacity: 1;
+  }
+  .product-card__particles {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: 0;
+    pointer-events: none;
+    overflow: hidden;
+  }
+  .product-card__particles hr {
+    position: absolute;
+    border: none;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(45deg, var(--color-gradient-start), var(--color-gradient-end));
+    opacity: 0.2;
+    width: 6px;
+    height: 6px;
+    animation: particle-float 2.5s ease-in-out infinite, particle-flicker 1.8s steps(2) infinite;
+  }
+  .product-card__particles hr:nth-child(1) { left: 15%; top: 20%; animation-delay: 0s; }
+  .product-card__particles hr:nth-child(2) { left: 75%; top: 60%; animation-delay: -2s; width: 8px; height: 4px; }
+  .product-card__particles hr:nth-child(3) { left: 40%; top: 80%; animation-delay: -4s; width: 5px; height: 7px; }
+  .product-card__image,
+  .product-card__content {
+    position: relative;
+    z-index: 1;
+  }
+
+  /* === Testimonial Row === */
+  .section-heading {
+    font-family: var(--font-heading);
+    font-weight: 500;
+    font-size: 1.6rem;
+    letter-spacing: -0.04em;
+    margin-bottom: 30px;
+    position: relative;
+    padding-bottom: 12px;
+  }
+  .section-heading::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(45deg, var(--color-gradient-start), var(--color-gradient-end));
+  }
+  .testimonial-row {
+    overflow: hidden;
+    position: relative;
+  }
+  .testimonial-track {
+    display: grid;
+    grid-template-columns: repeat(8, calc(25% - 23px));
+    gap: 30px;
+    animation: testimonial-scroll 16s ease-in-out infinite;
+  }
+  .testimonial-track:hover {
+    animation-play-state: paused;
+  }
+  @keyframes testimonial-scroll {
+    0%, 40% { transform: translateX(0); }
+    50%, 90% { transform: translateX(calc(-50% - 15px)); }
+    100% { transform: translateX(0); }
+  }
+  .testimonial-item {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(45deg, var(--color-bg-primary) 0%, var(--color-bg-primary-light) 100%);
+  }
+  .testimonial-item__image {
+    position: relative;
+    overflow: hidden;
+  }
+  .testimonial-item__image img {
+    width: 100%;
+    aspect-ratio: 16/10;
+    object-fit: cover;
+    display: block;
+  }
+  /* Duotone effect */
+  .testimonial-item__image::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: #50fbed;
+    mix-blend-mode: multiply;
+    z-index: 1;
+    opacity: 0.5;
+  }
+  .testimonial-item__image::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: #550291;
+    mix-blend-mode: screen;
+    z-index: 2;
+    opacity: 0.5;
+  }
+  .testimonial-item__content {
+    padding: 20px;
+  }
+  .testimonial-item__cap h5 {
+    font-size: 0.95rem;
+    margin-bottom: 2px;
+  }
+  .testimonial-item__cap h5 a {
+    color: inherit;
+    text-decoration: none;
+  }
+  .testimonial-item__cap h5 a:hover {
+    color: var(--color-accent);
+  }
+  .testimonial-item__role {
+    font-family: var(--font-heading);
+    font-size: 0.7rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.5);
+    margin-bottom: 10px;
+  }
+  .testimonial-item__quote {
+    font-size: 0.95rem;
+    color: var(--color-text);
+    line-height: 1.5;
+  }
+
+  /* === Event Featured Card === */
+  .event-featured-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background: linear-gradient(45deg, var(--color-bg-primary) 0%, var(--color-bg-primary-light) 100%);
+    overflow: hidden;
+  }
+  .event-featured-card__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .event-featured-card__content {
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .event-featured-card__content h2 {
+    font-size: 2.8rem;
+  }
+  .event-meta {
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .event-meta__cat {
+    font-family: var(--font-heading);
+    font-size: 0.7rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    background: linear-gradient(45deg, var(--color-gradient-start), var(--color-gradient-end));
+    color: white;
+  }
+  .event-meta__date {
+    font-family: var(--font-heading);
+    font-size: 0.75rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.5);
+  }
+
+  /* === Contact Section === */
+  .contact-section {
+    position: relative;
+    padding: 80px 0;
+    z-index: 1;
+    background: rgba(0,0,0,0.6) url('/images/home2-bg-contacts.jpg') center / cover no-repeat fixed;
+    background-blend-mode: darken;
+  }
+  .contact-section .container {
+    position: relative;
+    z-index: 1;
+  }
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 30px;
+  }
+  .contact-form-col :global(form) {
+    padding: 8% 8% 6% 8%;
+    background: rgba(0,0,0,0.5);
+    border: 1px solid rgba(255,255,255,0.2);
+  }
+  .small-text {
+    font-size: 0.9rem;
+  }
+
+  /* === Pricing Cards === */
+  .pricing-card__inner {
+    background: linear-gradient(45deg, var(--color-bg-primary) 0%, var(--color-bg-primary-light) 100%);
+    padding: 24px 30px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    transition: transform 0.3s ease;
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%);
+  }
+  .pricing-card__inner--accent {
+    background: linear-gradient(45deg, #0d0232 0%, #5f0090 50%, #1467ab 100%);
+  }
+  .pricing-card:hover .pricing-card__inner {
+    transform: translateY(-6px);
+  }
+  .pricing-card__icon {
+    font-size: 48px;
+    display: block;
+    margin-bottom: 16px;
+    background: linear-gradient(45deg, var(--color-gradient-start), var(--color-gradient-end));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .pricing-card__inner h4 {
+    color: var(--color-white);
+    margin-bottom: 4px;
+  }
+  .pricing-card__inner h6 {
+    color: rgba(255,255,255,0.6);
+    margin-bottom: 16px;
+    font-weight: 400;
+  }
+  .pricing-card__price {
+    margin-bottom: 24px;
+  }
+  .pricing-card__coin {
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    vertical-align: super;
+    color: rgba(255,255,255,0.6);
+  }
+  .pricing-card__price var {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    font-style: normal;
+    font-weight: 500;
+    color: var(--color-white);
+  }
+  .pricing-card__features {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 24px;
+    text-align: left;
+  }
+  .pricing-card__features li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    font-size: 0.85rem;
+  }
+  .pricing-card__features li.active .material-icons {
+    color: #4caf50;
+    font-weight: 700;
+  }
+  .pricing-card__features li.inactive {
+    opacity: 0.4;
+  }
+  .pricing-card__features li.inactive .material-icons {
+    color: rgba(255,255,255,0.3);
+  }
+  .pricing-card__features li .material-icons {
+    font-size: 20px;
+    font-weight: 700;
+  }
+  .pricing-card__btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* === Charts === */
+  .chart-card {
+    background-color: var(--color-bg);
+    padding: 30px;
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%);
+  }
+  .chart-card h4 {
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+  }
+  .bar-chart__row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+  }
+  .bar-chart__label {
+    font-family: var(--font-heading);
+    font-weight: 500;
+    font-size: 0.75rem;
+    letter-spacing: 0.04em;
+    width: 40px;
+    flex-shrink: 0;
+    color: rgba(255,255,255,0.6);
+  }
+  .bar-chart__bars {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .bar-chart__bar {
+    height: 22px;
+    display: flex;
+    align-items: center;
+    padding: 0 8px;
+    font-size: 0.7rem;
+    font-family: var(--font-heading);
+    font-weight: 500;
+    color: var(--color-white);
+    min-width: 50px;
+  }
+  .bar-chart__bar--spend {
+    background: linear-gradient(90deg, var(--color-gradient-start), var(--color-gradient-end));
+  }
+  .bar-chart__bar--loss {
+    background: linear-gradient(90deg, #ff4444, #cc0000);
+  }
+  .bar-chart__ratio {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 0.85rem;
+    color: #ff4444;
+    width: 40px;
+    text-align: right;
+    flex-shrink: 0;
+  }
+  .chart-legend {
+    display: flex;
+    gap: 20px;
+    margin-top: 16px;
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.6);
+  }
+  .chart-legend__item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .chart-legend__color {
+    width: 12px;
+    height: 12px;
+    flex-shrink: 0;
+  }
+  .chart-legend__color--spend {
+    background: linear-gradient(90deg, var(--color-gradient-start), var(--color-gradient-end));
+  }
+  .chart-legend__color--loss {
+    background: linear-gradient(90deg, #ff4444, #cc0000);
+  }
+  .chart-source {
+    font-size: 0.7rem;
+    color: rgba(255,255,255,0.4);
+    margin-top: 12px;
+    margin-bottom: 0;
+  }
+  .chart-source a {
+    color: rgba(255,255,255,0.5);
+  }
+  .waste-chart__item {
+    margin-bottom: 14px;
+  }
+  .waste-chart__bar-bg {
+    background: rgba(255,255,255,0.08);
+    height: 26px;
+    margin-bottom: 4px;
+  }
+  .waste-chart__bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--color-gradient-start), var(--color-gradient-end));
+    display: flex;
+    align-items: center;
+    padding: 0 8px;
+    font-size: 0.75rem;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    color: var(--color-white);
+  }
+  .waste-chart__bar-fill--red {
+    background: linear-gradient(90deg, #ff4444, #cc0000);
+  }
+  .waste-chart__label {
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.6);
+  }
+
+  /* === ROI Callout === */
+  .roi-callout__inner {
+    background: linear-gradient(45deg, #0d0232 0%, #5f0090 50%, #1467ab 100%);
+    padding: 40px;
+    text-align: center;
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%);
+  }
+  .roi-callout__inner h3 {
+    color: var(--color-white);
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+  .roi-callout__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    margin-bottom: 24px;
+  }
+  .roi-callout__stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+  .roi-callout__stat var {
+    font-family: var(--font-heading);
+    font-style: normal;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--color-white);
+  }
+  .roi-callout__stat span {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.7);
+    text-transform: uppercase;
+    font-family: var(--font-heading);
+    letter-spacing: 0.04em;
+  }
+  .roi-callout__note {
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.6);
+    margin-bottom: 0;
+  }
+  .roi-callout__note a {
+    color: rgba(255,255,255,0.7);
+  }
+
+  /* === Responsive === */
+  @media (max-width: 992px) {
+    .hero__grid {
+      grid-template-columns: 1fr;
+    }
+    .hero__title {
+      font-size: 2.8rem;
+    }
+    .hero {
+      min-height: 60vh;
+      background-position: 60% center;
+    }
+    .hero,
+    .contact-section {
+      background-attachment: scroll;
+    }
+    .testimonial-track {
+      grid-template-columns: repeat(8, calc(50% - 15px));
+    }
+    .event-featured-card {
+      grid-template-columns: 1fr;
+    }
+    .contact-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  @media (max-width: 600px) {
+    .hero__title {
+      font-size: 2.2rem;
+    }
+    .hero__content {
+      padding: 60px 20px 60px;
+    }
+    .testimonial-track {
+      display: flex;
+      animation: testimonial-scroll-mobile 20s ease-in-out infinite;
+    }
+    .testimonial-item {
+      min-width: 100%;
+      flex-shrink: 0;
+      max-width: 100%;
+    }
+    .testimonial-item__image img {
+      max-height: 200px;
+    }
+    .roi-callout__grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  @keyframes testimonial-scroll-mobile {
+    0%, 18% { transform: translateX(0); }
+    22%, 40% { transform: translateX(-100%); }
+    44%, 62% { transform: translateX(-200%); }
+    66%, 84% { transform: translateX(-300%); }
+    88%, 100% { transform: translateX(-400%); }
+  }
+</style>

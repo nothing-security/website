@@ -1,0 +1,41 @@
+---
+interface Props {
+  formId?: string;
+}
+
+const { formId = "contact-form" } = Astro.props;
+---
+
+<form id={formId} class="contact-form" action="#" method="post">
+  <label>
+    Your Name (required)
+    <input type="text" name="your-name" required />
+  </label>
+  <label>
+    Your Email (required)
+    <input type="email" name="your-email" required />
+  </label>
+  <label>
+    Subject
+    <input type="text" name="your-subject" />
+  </label>
+  <label>
+    Your Message
+    <textarea name="your-message" rows="6"></textarea>
+  </label>
+  <p>
+    <input type="submit" value="Send" />
+  </p>
+</form>
+
+<style>
+  .contact-form label {
+    display: block;
+    margin-bottom: 20px;
+  }
+  .contact-form input[type="text"],
+  .contact-form input[type="email"],
+  .contact-form textarea {
+    margin-top: 6px;
+  }
+</style>

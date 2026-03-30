@@ -1,0 +1,691 @@
+/* ============================================
+   Nothing Security - Global Styles
+   Faithful recreation of Firwl WordPress theme
+   ============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;700&family=Rubik:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+/* === CSS Variables === */
+:root {
+  --color-bg: #262626;
+  --color-bg-paper: #404040;
+  --color-bg-primary: #111618;
+  --color-bg-primary-light: #707070;
+  --color-text: #dddddd;
+  --color-text-heading: #eeeeee;
+  --color-accent: #069afe;
+  --color-accent-hover: #4a00ff;
+  --color-gradient-start: #00a2ff;
+  --color-gradient-end: #5c20ef;
+  --color-border: rgba(221,221,221,0.33);
+  --color-border-light: rgba(221,221,221,0.2);
+  --color-white: #ffffff;
+  --color-duotone-start: #50fbed;
+  --color-duotone-end: #550291;
+  --font-body: 'Karla', Helvetica, Arial, sans-serif;
+  --font-heading: 'Rubik', Helvetica, Arial, sans-serif;
+  --container-width: 1200px;
+  --container-narrow: 900px;
+}
+
+/* === Reset & Base === */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 0em;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  text-rendering: geometricPrecision;
+  line-height: 1.7;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+strong {
+  font-family: var(--font-body);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 500;
+  font-style: normal;
+  letter-spacing: -0.04em;
+  text-transform: none;
+  color: var(--color-text-heading);
+  text-rendering: geometricPrecision;
+  line-height: 1.2;
+  margin-bottom: 0.5em;
+}
+
+h1 { font-size: 2.8rem; }
+h2 { font-size: 2.2rem; }
+h3 { font-size: 1.8rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.1rem; }
+h6 { font-size: 0.95rem; }
+
+a {
+  color: var(--color-accent);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--color-accent-hover);
+}
+
+p {
+  margin-bottom: 1em;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+/* === Utility Classes === */
+.container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.container--narrow {
+  max-width: var(--container-narrow);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.gradient-text {
+  background: linear-gradient(45deg, var(--color-gradient-start) 0%, var(--color-gradient-end) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-bg {
+  background: linear-gradient(45deg, var(--color-gradient-start) 0%, var(--color-gradient-end) 100%);
+}
+
+.gradient-accent {
+  background: linear-gradient(45deg, #0d0232 0%, #5f0090 50%, #1467ab 100%);
+}
+
+/* === Cap Font (UI elements) === */
+.capfont,
+label,
+button,
+input[type="button"],
+input[type="submit"],
+.button {
+  font-family: var(--font-heading);
+  font-weight: 500;
+  font-style: normal;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-rendering: geometricPrecision;
+}
+
+/* === Buttons === */
+.btn {
+  display: inline-block;
+  font-family: var(--font-heading);
+  font-weight: 500;
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 14px 32px;
+  border: none;
+  color: var(--color-white);
+  background-image: linear-gradient(-45deg, var(--color-gradient-start) 0%, var(--color-gradient-end) 50%, rgba(255,255,255,0) 54%, rgba(255,255,255,0) 100%);
+  background-size: 300% 100%;
+  background-position: 100% 0;
+  transition: all 0.4s ease;
+  cursor: pointer;
+  text-decoration: none;
+  text-rendering: geometricPrecision;
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%);
+  position: relative;
+}
+
+/* Chamfered border via pseudo-element */
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: var(--color-border-light);
+  clip-path: polygon(
+    0 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%,
+    0 1px, 1px 1px, 1px calc(100% - 1px), calc(100% - 11px) calc(100% - 1px), calc(100% - 1px) calc(100% - 10px), calc(100% - 1px) 1px, 0 1px
+  );
+  pointer-events: none;
+  transition: background 0.4s ease;
+}
+
+.btn:hover {
+  background-position: 0 0;
+  color: var(--color-white);
+}
+
+.btn:hover::before {
+  background: rgba(255,255,255,0.4);
+}
+
+.btn--primary {
+  background-color: var(--color-gradient-start);
+  background-image: linear-gradient(-45deg, var(--color-gradient-start) 0%, var(--color-gradient-end) 100%);
+  background-size: 100% 100%;
+}
+
+.btn--primary::before {
+  background: transparent;
+}
+
+.btn--ghost {
+  background: rgba(0,0,0,0.3);
+  background-image: none;
+}
+
+.btn--ghost::before {
+  background: rgba(255,255,255,0.15);
+}
+
+.btn--ghost:hover {
+  background: rgba(255,255,255,0.1);
+}
+
+.btn--ghost:hover::before {
+  background: rgba(255,255,255,0.3);
+}
+
+.btn--large {
+  padding: 18px 48px;
+  font-size: 1rem;
+}
+
+.btn--round {
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0;
+  clip-path: none;
+}
+
+.btn--round::before {
+  clip-path: none;
+  background: none;
+}
+
+/* === Sections === */
+.section {
+  padding: 60px 0;
+  position: relative;
+  z-index: 1;
+  background-color: var(--color-bg);
+}
+
+.section--paper {
+  background-color: var(--color-bg-paper);
+}
+
+.section--primary {
+  background-color: var(--color-bg-primary);
+  color: var(--color-white);
+}
+
+.section--primary h1,
+.section--primary h2,
+.section--primary h3,
+.section--primary h4,
+.section--primary h5,
+.section--primary h6 {
+  color: var(--color-white);
+}
+
+/* === Page Header / Hero === */
+.page-header {
+  position: relative;
+  padding: 120px 0 80px;
+  overflow: hidden;
+  text-align: center;
+  background-color: var(--color-bg-primary);
+}
+
+.page-header__bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.6;
+  z-index: 0;
+  filter: saturate(1.2);
+}
+
+.page-header__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(10, 2, 50, 0.65) 0%,
+    rgba(95, 0, 144, 0.3) 40%,
+    rgba(20, 103, 171, 0.25) 70%,
+    rgba(0, 0, 0, 0.4) 100%
+  );
+  z-index: 1;
+}
+
+.page-header__content {
+  position: relative;
+  z-index: 2;
+}
+
+.page-header__title {
+  font-family: var(--font-heading);
+  font-weight: 500;
+  font-size: 3.5rem;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  color: var(--color-white);
+  margin-bottom: 0;
+}
+
+.page-header__subtitle {
+  font-size: 1.1rem;
+  color: rgba(255,255,255,0.85);
+  margin-top: 1rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.page-header__decor {
+  display: block;
+  width: 40px;
+  height: 4px;
+  background: linear-gradient(45deg, var(--color-gradient-start) 0%, var(--color-gradient-end) 100%);
+  margin: 0 auto 20px;
+}
+
+/* === Glitch Text Effect (CSS-only approximation) === */
+.glitch-text {
+  position: relative;
+}
+
+.glitch-text::before,
+.glitch-text::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Periodic glitch animation on hero titles */
+.glitch-text::before {
+  animation: glitch-1 4s ease-in-out infinite;
+  color: var(--color-duotone-start);
+  z-index: -1;
+  clip-path: inset(0 0 65% 0);
+}
+
+.glitch-text::after {
+  animation: glitch-2 4s ease-in-out infinite;
+  color: var(--color-duotone-end);
+  z-index: -1;
+  clip-path: inset(60% 0 0 0);
+}
+
+@keyframes glitch-1 {
+  0%, 85%, 100% { opacity: 0; transform: translate(0); }
+  86% { opacity: 0.8; transform: translate(-3px, 2px); }
+  88% { opacity: 0.6; transform: translate(2px, -1px); }
+  90% { opacity: 0.8; transform: translate(-2px, -2px); }
+  92% { opacity: 0; transform: translate(0); }
+}
+
+@keyframes glitch-2 {
+  0%, 87%, 100% { opacity: 0; transform: translate(0); }
+  88% { opacity: 0.8; transform: translate(3px, -2px); }
+  90% { opacity: 0.6; transform: translate(-2px, 1px); }
+  92% { opacity: 0.8; transform: translate(2px, 2px); }
+  94% { opacity: 0; transform: translate(0); }
+}
+
+/* === Section Caption === */
+.section-caption {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.section-caption__label {
+  font-family: var(--font-heading);
+  font-weight: 500;
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  display: inline-block;
+  margin-bottom: 8px;
+  background: linear-gradient(45deg, var(--color-gradient-start) 0%, var(--color-gradient-end) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.section-caption__title {
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  letter-spacing: -0.04em;
+}
+
+.section-caption__desc {
+  margin-top: 10px;
+  color: rgba(255,255,255,0.7);
+}
+
+/* === Cards === */
+.card {
+  background-color: var(--color-bg-paper);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+}
+
+.card__image {
+  width: 100%;
+  aspect-ratio: 16/10;
+  object-fit: cover;
+}
+
+.card__body {
+  padding: 24px;
+}
+
+.card__title {
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+}
+
+.card__text {
+  font-size: 0.95rem;
+  color: var(--color-text);
+  margin-bottom: 16px;
+}
+
+.card__meta {
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+}
+
+/* === Grid === */
+.grid {
+  display: grid;
+  gap: 30px;
+}
+
+.grid--2 { grid-template-columns: repeat(2, 1fr); }
+.grid--3 { grid-template-columns: repeat(3, 1fr); }
+.grid--4 { grid-template-columns: repeat(4, 1fr); }
+
+@media (max-width: 992px) {
+  .grid--3, .grid--4 { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 600px) {
+  .grid--2, .grid--3, .grid--4 { grid-template-columns: 1fr; }
+}
+
+/* CTA Section styles are in BaseLayout.astro scoped styles */
+
+/* === Checklist (Hero List) === */
+.checklist {
+  margin: 20px 0;
+}
+
+.checklist__item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+  font-size: 1rem;
+}
+
+.checklist__icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(-45deg, var(--color-gradient-start) 0%, var(--color-gradient-end) 50%, rgba(255,255,255,0) 54%);
+  background-size: 300% 100%;
+  background-position: 100% 0;
+  border: 1px solid var(--color-border-light);
+  color: var(--color-white);
+  flex-shrink: 0;
+  font-size: 18px;
+}
+
+/* === FAQ / Accordion === */
+.faq-list {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  border-bottom: 1px solid var(--color-border);
+  padding: 20px 0;
+}
+
+.faq-item__question {
+  font-family: var(--font-heading);
+  font-weight: 500;
+  font-size: 1.1rem;
+  color: var(--color-text-heading);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.faq-item__question .material-icons {
+  color: var(--color-accent);
+  transition: transform 0.3s ease;
+}
+
+.faq-item__answer {
+  padding-top: 12px;
+  padding-left: 36px;
+  color: var(--color-text);
+  line-height: 1.7;
+}
+
+/* === Forms === */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea,
+select {
+  width: 100%;
+  padding: 12px 16px;
+  background-color: var(--color-bg);
+  border: 1px solid var(--color-border);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+  border-radius: 0;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: var(--color-accent);
+}
+
+label {
+  display: block;
+  margin-bottom: 16px;
+  font-family: var(--font-heading);
+  font-weight: 500;
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-text);
+}
+
+label input,
+label textarea {
+  margin-top: 6px;
+}
+
+input[type="submit"] {
+  display: inline-block;
+  padding: 14px 40px;
+  border: none;
+  color: var(--color-white);
+  background: linear-gradient(-45deg, var(--color-gradient-start) 0%, var(--color-gradient-end) 100%);
+  font-family: var(--font-heading);
+  font-weight: 500;
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+input[type="submit"]:hover {
+  opacity: 0.9;
+}
+
+/* === Pie Chart (CSS-only) === */
+.pie-chart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.pie-chart__visual {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  position: relative;
+}
+
+.pie-chart__legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+}
+
+.pie-chart__legend-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.85rem;
+}
+
+.pie-chart__legend-color {
+  width: 14px;
+  height: 14px;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+/* === Two Column Layout === */
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .two-col {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}
+
+/* === Animate on Scroll === */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.animate-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* === Spacers === */
+.spacer-xs { height: 15px; }
+.spacer-s { height: 30px; }
+.spacer-m { height: 50px; }
+.spacer-l { height: 80px; }
+
+/* === Responsive === */
+@media (max-width: 768px) {
+  .page-header__title {
+    font-size: 2.2rem;
+  }
+
+  .section-caption__title {
+    font-size: 1.8rem;
+  }
+
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.6rem; }
+  h3 { font-size: 1.3rem; }
+
+  .section {
+    padding: 40px 0;
+  }
+}

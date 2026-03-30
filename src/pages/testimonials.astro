@@ -1,0 +1,53 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHeader from '../components/PageHeader.astro';
+import TestimonialCard from '../components/TestimonialCard.astro';
+---
+
+<BaseLayout title="Testimonials">
+  <PageHeader title="Testimonials" backgroundImage="/images/header-customizer.jpg" />
+
+  <section class="section section--paper">
+    <div class="container">
+      <p class="results-count">4 Results / Page 1 of 1</p>
+
+      <div class="grid grid--2">
+        <TestimonialCard
+          quote="Don't expect your DLP solution to work as well as this! Do Nothing&trade;!"
+          name="Norma Stitz"
+          role="DevOps Engineer"
+          image="/images/testimonial-O70LL00.jpg"
+        />
+        <TestimonialCard
+          quote="Our employees are no longer afraid of getting hacked."
+          name="Sergei Bhetenov"
+          role="VP Of Business Development"
+          image="/images/testimonial-954.jpg"
+        />
+        <TestimonialCard
+          quote="Don't settle for expensive security solutions. Nothing works!"
+          name="Michael Itoris"
+          role="Chief Information Security Officer"
+          image="/images/testimonial-O6YV3J0.jpg"
+        />
+        <TestimonialCard
+          quote="Our cloud platform came with Nothing already installed. It's so easy."
+          name="Anita Goodchit"
+          role="Chief Executive Officer"
+          image="/images/testimonial-677993-PPUB4P-401.jpg"
+        />
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .results-count {
+    font-family: var(--font-heading);
+    font-size: 0.8rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: rgba(221,221,221,0.6);
+    margin-bottom: 30px;
+  }
+</style>

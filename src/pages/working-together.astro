@@ -1,0 +1,192 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ContactForm from '../components/ContactForm.astro';
+---
+
+<BaseLayout title="Work With Us">
+  <!-- Full-width hero (not using PageHeader for this one - it's unique) -->
+  <section class="page-header careers-hero">
+    <img src="/images/work-header.jpg" alt="" class="page-header__bg" data-parallax data-parallax-ratio="0.15" />
+    <div class="page-header__overlay"></div>
+    <div class="page-header__content container">
+      <i class="page-header__decor"></i>
+      <h1 class="page-header__title glitch-text" data-text="WORK WITH US">WORK WITH US</h1>
+      <h4 class="careers-hero__sub">JOIN OUR TEAM OF DEDICATED ENGINEERS, DESIGNERS AND MARKETERS.</h4>
+      <h4 class="careers-hero__sub">BUILD THE NEXT GENERATION OF NOTHING.</h4>
+      <div style="margin-top: 2rem;">
+        <a href="#learnmore" class="btn btn--primary btn--large">LEARN MORE</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Application Section -->
+  <section class="section section--paper" id="learnmore">
+    <div class="container">
+      <div class="two-col">
+        <div>
+          <h3 class="glitch-text" data-text="Want to Do Nothing™ All Day?">Want to Do Nothing&trade; All Day?</h3>
+          <div class="spacer-xs"></div>
+          <h4>Put that CISSP to use! Work with our team to deliver on the promise of Security Minimalism.</h4>
+          <p><strong>Please fill in the form and we will be get around to responding at some point.</strong> There's a long list of people waiting to Do Nothing&trade;, so please be patient.</p>
+        </div>
+        <div>
+          <ContactForm formId="careers-form" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Open Positions Header -->
+  <section class="positions-header">
+    <img src="/images/work-section.jpg" alt="" class="page-header__bg" data-parallax data-parallax-ratio="0.1" />
+    <div class="page-header__overlay"></div>
+    <div class="page-header__content container">
+      <h6 class="section-caption__label"><span>Your Career</span></h6>
+      <h2 class="section-caption__title glitch-text" data-text="Open Positions">Open Positions</h2>
+    </div>
+  </section>
+
+  <!-- Analyst Position -->
+  <section class="section" style="background-color: var(--color-bg-paper);">
+    <div class="container">
+      <div class="two-col">
+        <div>
+          <h3 class="glitch-text" data-text="Analyst">Analyst</h3>
+          <p>Use your imagination all day and write reports. People will be paying you for your insights and influence.</p>
+          <div class="checklist">
+            <div class="checklist__item">
+              <span class="checklist__icon material-icons">check</span>
+              <span>Buzzword Compliant</span>
+            </div>
+            <div class="checklist__item">
+              <span class="checklist__icon material-icons">check</span>
+              <span>Must take credit for other people's work</span>
+            </div>
+            <div class="checklist__item">
+              <span class="checklist__icon material-icons">check</span>
+              <span>Take bribes</span>
+            </div>
+            <div class="checklist__item">
+              <span class="checklist__icon material-icons">check</span>
+              <span>Leak intellectual property from one company to another</span>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="pie-chart">
+            <div class="pie-chart__visual" style="background: conic-gradient(#28f0ff 0% 10%, #2774f9 10% 25%, #7200ff 25% 100%);"></div>
+            <div class="pie-chart__legend">
+              <div class="pie-chart__legend-item">
+                <span class="pie-chart__legend-color" style="background:#28f0ff;"></span>
+                Talking (10%)
+              </div>
+              <div class="pie-chart__legend-item">
+                <span class="pie-chart__legend-color" style="background:#2774f9;"></span>
+                Pointing Fingers (15%)
+              </div>
+              <div class="pie-chart__legend-item">
+                <span class="pie-chart__legend-color" style="background:#7200ff;"></span>
+                Drinking With Customers (75%)
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Penetration Tester Position -->
+  <section class="section" style="background-color: var(--color-bg-paper);">
+    <div class="container">
+      <div class="two-col">
+        <div>
+          <div class="pie-chart">
+            <div class="pie-chart__visual" style="background: conic-gradient(#28f0ff 0% 5%, #2774f9 5% 20%, #7200ff 20% 95%, #b8d354 95% 100%);"></div>
+            <div class="pie-chart__legend">
+              <div class="pie-chart__legend-item">
+                <span class="pie-chart__legend-color" style="background:#28f0ff;"></span>
+                Expensing Travel (5%)
+              </div>
+              <div class="pie-chart__legend-item">
+                <span class="pie-chart__legend-color" style="background:#2774f9;"></span>
+                Hanging out on Slack (15%)
+              </div>
+              <div class="pie-chart__legend-item">
+                <span class="pie-chart__legend-color" style="background:#7200ff;"></span>
+                Attending Conferences (75%)
+              </div>
+              <div class="pie-chart__legend-item">
+                <span class="pie-chart__legend-color" style="background:#b8d354;"></span>
+                Explaining What a Penetration Tester Is (5%)
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h3 class="glitch-text" data-text="Penetration Tester">Penetration Tester</h3>
+          <p>Seeking experienced Penetration Tester. No actual experience necessary. Must be able to sell hundreds of pages of 'information leakage' CWEs to a customer.</p>
+          <div class="checklist">
+            <div class="checklist__item">
+              <span class="checklist__icon material-icons">check</span>
+              <span>Kali Linux</span>
+            </div>
+            <div class="checklist__item">
+              <span class="checklist__icon material-icons">check</span>
+              <span>Wifi Pineapple</span>
+            </div>
+            <div class="checklist__item">
+              <span class="checklist__icon material-icons">check</span>
+              <span>NMAP, NESSUS, SQLNINJA</span>
+            </div>
+            <div class="checklist__item">
+              <span class="checklist__icon material-icons">check</span>
+              <span>Manic depression highly preferred</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .careers-hero {
+    padding: 140px 0 100px;
+  }
+  .careers-hero__sub {
+    color: rgba(255,255,255,0.85);
+    text-align: center;
+    font-weight: 400;
+    margin-bottom: 0;
+  }
+  .positions-header {
+    position: relative;
+    padding: 80px 0;
+    text-align: center;
+    overflow: hidden;
+  }
+  .positions-header .page-header__bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.4;
+    z-index: 0;
+  }
+  .positions-header .page-header__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, var(--color-accent) 0%, var(--color-accent-hover) 100%);
+    opacity: 0.3;
+    z-index: 1;
+  }
+  .positions-header .page-header__content {
+    position: relative;
+    z-index: 2;
+  }
+</style>

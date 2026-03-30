@@ -1,0 +1,60 @@
+---
+interface Props {
+  title: string;
+  phone?: string;
+  image?: string;
+  featured?: boolean;
+}
+
+const { title, phone, image, featured } = Astro.props;
+---
+
+<div class:list={["service-card", { "service-card--featured": featured }]}>
+  {image && (
+    <div class="service-card__image">
+      <img src={image} alt={title} />
+    </div>
+  )}
+  <div class="service-card__body">
+    <h3 class="service-card__title">{title}</h3>
+    {phone && <p class="service-card__phone">{phone}</p>}
+    <a href="#" class="btn">More Info</a>
+  </div>
+</div>
+
+<style>
+  .service-card {
+    background-color: var(--color-bg-paper);
+    text-align: center;
+    padding: 30px 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .service-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+  }
+  .service-card--featured {
+    background: linear-gradient(45deg, #0d0232 0%, #5f0090 50%, #1467ab 100%);
+  }
+  .service-card__image {
+    margin-bottom: 20px;
+  }
+  .service-card__image img {
+    max-height: 120px;
+    width: auto;
+  }
+  .service-card__title {
+    font-family: var(--font-heading);
+    font-weight: 500;
+    font-size: 1.2rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--color-white);
+    margin-bottom: 10px;
+  }
+  .service-card__phone {
+    font-size: 1.1rem;
+    color: var(--color-accent);
+    margin-bottom: 20px;
+  }
+</style>

@@ -1,0 +1,111 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHeader from '../components/PageHeader.astro';
+---
+
+<BaseLayout title="Events">
+  <PageHeader title="Events" backgroundImage="/images/header-customizer.jpg" />
+
+  <section class="section section--paper">
+    <div class="container">
+      <div class="event-featured">
+        <div class="two-col">
+          <div class="event-images">
+            <img src="/images/post-17.jpg" alt="Black Hat 2026" class="event-image" />
+            <img src="/images/dumpster.jpg" alt="Nothing Security Booth at Black Hat Vendor Hall" class="event-image" />
+          </div>
+          <div>
+            <span class="event-type">Conference</span>
+            <p class="event-date">August 1&ndash;6, 2026</p>
+            <h2>Black Hat USA 2026</h2>
+            <p>Black Hat vendor passes now cost more than most companies' entire annual security budget. At $3,495 per person, you could instead Do Nothing&trade; for 3.2 years and achieve the same measurable security improvement.</p>
+            <p>Since we refuse to pay that, you'll find us <strong>exhibiting outside the vendor area</strong> at the Mandalay Bay convention center. Look for our booth near the loading dock.</p>
+            <p>We'll also be giving <strong>lightning talks behind the dumpster at the Delano</strong>, covering topics such as:</p>
+            <ul class="event-list">
+              <li>"Cloud Firewall Effectiveness: A 30-Second Talk" (0% content, matching the product)</li>
+              <li>"76 Tools and Nothing to Show For It: A CISO's Journey"</li>
+              <li>"Accepting Risk: A Guided Meditation"</li>
+            </ul>
+            <p>Don't miss our <strong>Security Minimalism Training</strong> &mdash; the most cost-effective way to spend your remaining security budget. Learn how to apply the principles of doing absolutely nothing to your organization's security posture. Attendees will receive a certificate of completion that is exactly as valuable as every other security certification.</p>
+            <p>Complimentary Nothing Security t-shirts for anyone who shows us their conference badge receipt and cries.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="spacer-l"></div>
+
+      <div class="section-caption">
+        <h6 class="section-caption__label"><span>Past Events</span></h6>
+        <h2 class="section-caption__title glitch-text" data-text="RECENT APPEARANCES">RECENT APPEARANCES</h2>
+      </div>
+
+      <div class="grid grid--2">
+        <div class="card">
+          <div class="card__body" style="padding:30px;">
+            <span class="event-type">Conference</span>
+            <p class="event-date">March 23&ndash;26, 2026</p>
+            <h3>RSA Conference 2026</h3>
+            <p>Thank you to everyone who visited the <strong>Nothing Symposium</strong> and our <strong>midnight anger therapy session outside the CVS by the Mosser</strong>. We had an incredible turnout of disillusioned security professionals who just needed someone to tell them it's okay to stop pretending.</p>
+            <p>Highlights included a group reading of the Verizon DBIR's "60% of breaches were from known, patched vulnerabilities" finding, followed by a communal scream into the San Francisco fog.</p>
+            <p>Special thanks to the three CISOs who handed us their resignation letters to use as napkins.</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card__body" style="padding:30px;">
+            <span class="event-type">Conference</span>
+            <p class="event-date">August 3, 2019</p>
+            <h3>Black Hat USA 2019</h3>
+            <p>Our inaugural appearance. Many vendors were showcasing complicated, costly, and burdensome security technologies. We showcased Nothing and it outperformed all of them.</p>
+            <p>Since then, cybersecurity spending has grown 87% and cybercrime losses have grown 600%. We were right. They were expensive.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .event-featured {
+    margin-bottom: 40px;
+  }
+  .event-images {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .event-image {
+    width: 100%;
+    object-fit: cover;
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 16px), calc(100% - 16px) 100%, 0 100%);
+  }
+  .event-type {
+    display: inline-block;
+    font-family: var(--font-heading);
+    font-weight: 500;
+    font-size: 0.75rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    background: linear-gradient(45deg, var(--color-gradient-start), var(--color-gradient-end));
+    color: white;
+    margin-bottom: 8px;
+  }
+  .event-date {
+    font-family: var(--font-heading);
+    font-size: 0.85rem;
+    color: var(--color-accent);
+    margin-bottom: 12px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+  .event-list {
+    list-style: disc;
+    padding-left: 20px;
+    margin-bottom: 1em;
+  }
+  .event-list li {
+    margin-bottom: 6px;
+    font-size: 0.95rem;
+    font-style: italic;
+  }
+</style>

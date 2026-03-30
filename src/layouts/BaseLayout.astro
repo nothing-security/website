@@ -1,0 +1,654 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = "Total Security Oversight" } = Astro.props;
+const currentPath = Astro.url.pathname;
+
+const navItems = [
+  { label: "Home", href: "/", right: false },
+  { label: "Do Nothing", href: "/about-us/", right: false },
+  { label: "Events", href: "/events/", right: false },
+  { label: "Cyber Attack Hotline", href: "/cyber-attack-hotline/", right: false },
+  { label: "Testimonials", href: "/testimonials/", right: true },
+  { label: "Team", href: "/our-team/", right: true },
+  { label: "Careers", href: "/working-together/", right: true },
+  { label: "Merchandise", href: "/merchandise/", right: true },
+];
+
+const footerNavItems = [
+  { label: "Home", href: "/" },
+  { label: "Do Nothing", href: "/about-us/" },
+  { label: "Events", href: "/events/" },
+  { label: "Cyber Attack Hotline", href: "/cyber-attack-hotline/" },
+  { label: "Testimonials", href: "/testimonials/" },
+  { label: "Our Team", href: "/our-team/" },
+  { label: "Work With Us", href: "/working-together/" },
+  { label: "Contact us", href: "/contact-us/" },
+  { label: "Merchandise", href: "/merchandise/" },
+];
+---
+
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <title>{title} &ndash; Nothing Security</title>
+    <link rel="icon" href="/images/cropped-nothingsecurity-icon-32x32.png" sizes="32x32" />
+    <link rel="icon" href="/images/cropped-nothingsecurity-icon-192x192.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="/images/cropped-nothingsecurity-icon-180x180.png" />
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <div class="site-global">
+      <!-- Secondary Header Bar -->
+      <div class="secondary-header">
+        <div class="secondary-header__content">
+          <a href="/cyber-attack-hotline/" class="sos-link">
+            <span class="material-icons">perm_phone_msg</span>
+            NOTHING CAN HELP
+            <span class="sos-link__phone">Call Today: 248.434.5508</span>
+          </a>
+          <div class="secondary-header__right">
+            <div class="social-icons">
+              <a href="https://x.com/hackdotxxx" target="_blank" aria-label="X"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+              <a href="https://bsky.app/profile/hack.xxx" target="_blank" aria-label="Bluesky"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 10.8c-1.087-2.114-4.046-6.053-6.798-7.995C2.566.944 1.561 1.266.902 1.565.139 1.908 0 3.08 0 3.768c0 .69.378 5.65.624 6.479.785 2.627 3.6 3.476 6.158 3.166-.36.053-.036.073 0 0-4.488.804-7.04 2.636-4.333 7.664C5.612 26.49 11.103 20.667 12 17.64c.897 3.027 5.089 7.277 9.542 3.438 2.707-5.029.155-6.861-4.333-7.665.036.073.36.053 0 0 2.558.31 5.373-.539 6.158-3.166.246-.828.624-5.789.624-6.478 0-.69-.139-1.861-.902-2.206-.659-.298-1.664-.62-4.3 1.24C16.046 4.748 13.087 8.687 12 10.8z"/></svg></a>
+            </div>
+            <nav class="secondary-nav">
+              <a href="/contact-us/">Contacts</a>
+            </nav>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main Header -->
+      <header class="main-header">
+        <div class="main-header__content">
+          <a href="/" class="logo">
+            <img src="/images/nothingsecurity-logo-72.png" alt="Nothing Security" />
+          </a>
+
+          <nav class="main-nav" id="mainNav">
+            <ul class="main-nav__list">
+              {navItems.map((item) => (
+                <li class:list={[{ active: currentPath === item.href || currentPath === item.href.slice(0, -1), 'nav-right': item.right }]}>
+                  <a href={item.href}>{item.label}</a>
+                </li>
+              ))}
+            </ul>
+            <span class="nav-indicator" id="navIndicator"></span>
+          </nav>
+
+          <div class="header-actions">
+            <a href="/industry-outlook-2026/" class="btn btn--primary">Download the Report</a>
+            <button class="mobile-menu-toggle" id="menuToggle" aria-label="Toggle menu">
+              <span class="material-icons">menu</span>
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <!-- Mobile Nav Overlay -->
+      <nav class="mobile-nav" id="mobileNav">
+        <div class="mobile-nav__close">
+          <button id="menuClose" aria-label="Close menu">
+            <span class="material-icons">close</span>
+          </button>
+        </div>
+        <ul class="mobile-nav__list">
+          {navItems.map((item) => (
+            <li>
+              <a href={item.href}>{item.label}</a>
+            </li>
+          ))}
+        </ul>
+        <ul class="mobile-nav__secondary">
+          <li><a href="/contact-us/">Contacts</a></li>
+        </ul>
+        <div class="mobile-nav__cta">
+          <a href="/industry-outlook-2026/" class="btn btn--primary">Download the Report</a>
+        </div>
+      </nav>
+      <div class="mobile-nav__mask" id="navMask"></div>
+
+      <!-- Main Content -->
+      <main>
+        <slot />
+      </main>
+
+      <!-- Footer CTA -->
+      <section class="cta-section" style="background-image: url('/images/footer-bg-purple_OP.jpg');">
+        <div class="cta-section__watermark" style="background-image: url('/images/nothingsecurity-icon.png');"></div>
+        <div class="cta-section__frame"></div>
+        <div class="cta-section__content container">
+          <div class="spacer-xs"></div>
+          <h2 class="cta-section__title glitch-text" data-text="STOP RAISING THE BAR">STOP RAISING THE BAR</h2>
+          <p class="cta-section__desc">No Overhead. Cloud Agnostic. Most Common Industry Practice.</p>
+          <a href="https://github.com/nothing-security" target="_blank" class="btn btn--ghost btn--large">Get Nothing</a>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="site-footer">
+        <div class="site-footer__copy">
+          <div class="container">
+            <p>Copyright 2019 Nothing Security - A <a href="https://hack.xxx/" target="_blank">HACK.XXX</a> Subsidiary</p>
+            <nav class="footer-nav">
+              {footerNavItems.map((item) => (
+                <a href={item.href}>{item.label}</a>
+              ))}
+            </nav>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <style>
+      /* === Secondary Header === */
+      .secondary-header {
+        background-color: var(--color-bg-primary);
+        color: var(--color-white);
+        font-size: 0.8rem;
+        padding: 8px 0;
+      }
+      .secondary-header__content {
+        max-width: var(--container-width);
+        margin: 0 auto;
+        padding: 0 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .sos-link {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        color: var(--color-white);
+        font-family: var(--font-heading);
+        font-weight: 500;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        font-size: 0.75rem;
+      }
+      .sos-link .material-icons {
+        font-size: 18px;
+        color: var(--color-accent);
+      }
+      .sos-link__phone {
+        opacity: 0.7;
+        margin-left: 4px;
+      }
+      .secondary-header__right {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+      }
+      .social-icons {
+        display: flex;
+        gap: 12px;
+      }
+      .social-icons a {
+        color: rgba(255,255,255,0.6);
+        transition: color 0.3s;
+      }
+      .social-icons a:hover {
+        color: var(--color-white);
+      }
+      .secondary-nav a {
+        font-family: var(--font-heading);
+        font-weight: 500;
+        font-size: 0.75rem;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        color: var(--color-white);
+      }
+
+      /* === Main Header === */
+      .main-header {
+        background-color: var(--color-bg-paper);
+        position: sticky;
+        top: 0;
+        z-index: 100;
+      }
+      .main-header__content {
+        max-width: var(--container-width);
+        margin: 0 auto;
+        padding: 0 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 70px;
+      }
+      .logo img {
+        height: 36px;
+        width: auto;
+      }
+      .main-nav__list {
+        display: flex;
+        gap: 0;
+      }
+      .main-nav__list li {
+        position: relative;
+      }
+      .main-nav__list a {
+        display: inline-flex;
+        align-items: center;
+        padding: 24px 10px 24px 20px;
+        font-family: var(--font-heading);
+        font-weight: 500;
+        font-size: 0.78rem;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        color: var(--color-text);
+        transition: color 0.3s;
+        white-space: nowrap;
+        position: relative;
+      }
+      /* Double-slash separator before each nav link */
+      .main-nav__list a::before,
+      .main-nav__list a::after {
+        content: '';
+        display: block;
+        width: 2px;
+        height: 10px;
+        position: absolute;
+        top: 50%;
+        margin-top: -6px;
+        transform: skewX(-30deg);
+        background: linear-gradient(45deg, var(--color-gradient-start), var(--color-gradient-end));
+        opacity: 0.7;
+      }
+      .main-nav__list a::before {
+        left: 5px;
+      }
+      .main-nav__list a::after {
+        left: 0px;
+      }
+      .nav-indicator {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 3px;
+        background: linear-gradient(45deg, var(--color-gradient-start), var(--color-gradient-end));
+        transition: transform 0.25s cubic-bezier(0, 1, 0.6, 1), width 0.25s cubic-bezier(0, 1, 0.6, 1);
+        width: 0;
+        pointer-events: none;
+        z-index: 10;
+      }
+      .main-nav {
+        position: relative;
+      }
+      .main-nav__list li.nav-right:first-of-type {
+        margin-left: auto;
+      }
+      .main-nav__list a:hover {
+        color: var(--color-white);
+      }
+      .main-nav__list a:hover::before,
+      .main-nav__list a:hover::after {
+        opacity: 1;
+      }
+      .header-actions {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+      .header-actions .btn {
+        padding: 10px 24px;
+        font-size: 0.75rem;
+      }
+      .mobile-menu-toggle {
+        display: none;
+        background: none;
+        border: none;
+        color: var(--color-text);
+        cursor: pointer;
+        padding: 4px;
+      }
+
+      /* === Mobile Nav === */
+      .mobile-nav {
+        position: fixed;
+        top: 0;
+        right: -320px;
+        width: 300px;
+        height: 100vh;
+        background-color: var(--color-bg-paper);
+        z-index: 200;
+        padding: 20px;
+        overflow-y: auto;
+        transition: right 0.3s ease;
+      }
+      .mobile-nav.open {
+        right: 0;
+      }
+      .mobile-nav__close {
+        text-align: right;
+        margin-bottom: 20px;
+      }
+      .mobile-nav__close button {
+        background: none;
+        border: 1px solid var(--color-border-light);
+        color: var(--color-text);
+        padding: 8px;
+        cursor: pointer;
+        border-radius: 50%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .mobile-nav__list,
+      .mobile-nav__secondary {
+        list-style: none;
+        padding: 0;
+      }
+      .mobile-nav__list a,
+      .mobile-nav__secondary a {
+        display: block;
+        padding: 12px 0;
+        font-family: var(--font-heading);
+        font-weight: 500;
+        font-size: 0.9rem;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        color: var(--color-text);
+      }
+      .mobile-nav__list li,
+      .mobile-nav__secondary li {
+        border-bottom: 1px solid var(--color-border);
+      }
+      .mobile-nav__list a::before,
+      .mobile-nav__list a::after,
+      .mobile-nav__secondary a::before,
+      .mobile-nav__secondary a::after {
+        display: none;
+      }
+      .mobile-nav__secondary {
+        margin-top: 0;
+        padding-top: 0;
+      }
+      .mobile-nav__cta {
+        margin-top: 20px;
+      }
+      .mobile-nav__cta .btn {
+        width: 100%;
+        text-align: center;
+        display: block;
+      }
+      .mobile-nav__mask {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.5);
+        z-index: 199;
+      }
+      .mobile-nav__mask.open {
+        display: block;
+      }
+
+      /* === CTA Section enhancements === */
+      .cta-section {
+        position: relative;
+        padding: 140px 0;
+        text-align: center;
+        overflow: hidden;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+      .cta-section__watermark {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 280px;
+        height: 280px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        opacity: 0.15;
+        z-index: 1;
+      }
+      .cta-section__frame {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 60%;
+        max-width: 700px;
+        height: 80%;
+        border: 2px solid rgba(255,255,255,0.2);
+        z-index: 1;
+        pointer-events: none;
+      }
+      /* Corner bracket decorations */
+      .cta-section__frame::before,
+      .cta-section__frame::after {
+        content: '';
+        position: absolute;
+        width: 24px;
+        height: 24px;
+        border-color: rgba(255,255,255,0.45);
+        border-style: solid;
+      }
+      .cta-section__frame::before {
+        top: -2px;
+        left: -2px;
+        border-width: 3px 0 0 3px;
+      }
+      .cta-section__frame::after {
+        bottom: -2px;
+        right: -2px;
+        border-width: 0 3px 3px 0;
+      }
+      .cta-section__content {
+        position: relative;
+        z-index: 2;
+      }
+      .cta-section__title {
+        font-size: 2.5rem;
+        text-transform: uppercase;
+        color: var(--color-white);
+        margin-bottom: 10px;
+      }
+      .cta-section__desc {
+        color: rgba(255,255,255,0.85);
+        margin-bottom: 30px;
+        font-size: 1.1rem;
+        font-style: italic;
+      }
+
+      /* === Footer === */
+      .site-footer__copy {
+        background-color: var(--color-bg-primary);
+        padding: 16px 0;
+      }
+      .site-footer__copy .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 10px;
+      }
+      .site-footer__copy a {
+        color: rgba(255,255,255,0.6);
+        transition: color 0.3s;
+      }
+      .site-footer__copy a:hover {
+        color: var(--color-white);
+      }
+      .site-footer__copy p {
+        font-family: var(--font-heading);
+        font-weight: 500;
+        font-size: 0.75rem;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        color: rgba(255,255,255,0.6);
+        margin: 0;
+      }
+      .footer-nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 4px;
+      }
+      .footer-nav a {
+        font-family: var(--font-heading);
+        font-weight: 500;
+        font-size: 0.7rem;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        color: rgba(255,255,255,0.5);
+        padding: 4px 8px 4px 18px;
+        position: relative;
+      }
+      .footer-nav a::before,
+      .footer-nav a::after {
+        content: '';
+        display: block;
+        width: 2px;
+        height: 10px;
+        position: absolute;
+        top: 50%;
+        margin-top: -6px;
+        transform: skewX(-30deg);
+        background: rgba(150,150,150,0.5);
+      }
+      .footer-nav a::before {
+        left: 5px;
+      }
+      .footer-nav a::after {
+        left: 0px;
+      }
+      .footer-nav a:first-child::before,
+      .footer-nav a:first-child::after {
+        display: none;
+      }
+      .footer-nav a:first-child {
+        padding-left: 8px;
+      }
+      .footer-nav a:hover {
+        color: var(--color-white);
+      }
+
+      /* === Responsive === */
+      @media (max-width: 1024px) {
+        .main-nav {
+          display: none;
+        }
+        .mobile-menu-toggle {
+          display: block;
+        }
+        .header-actions .btn {
+          padding: 8px 16px;
+          font-size: 0.65rem;
+        }
+      }
+      @media (max-width: 600px) {
+        .secondary-header__right {
+          display: none;
+        }
+        .site-footer__copy .container {
+          flex-direction: column;
+          text-align: center;
+        }
+        .footer-nav {
+          justify-content: center;
+        }
+      }
+    </style>
+
+    <script>
+      const toggle = document.getElementById('menuToggle');
+      const close = document.getElementById('menuClose');
+      const nav = document.getElementById('mobileNav');
+      const mask = document.getElementById('navMask');
+
+      function openMenu() {
+        nav?.classList.add('open');
+        mask?.classList.add('open');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeMenu() {
+        nav?.classList.remove('open');
+        mask?.classList.remove('open');
+        document.body.style.overflow = '';
+      }
+
+      toggle?.addEventListener('click', openMenu);
+      close?.addEventListener('click', closeMenu);
+      mask?.addEventListener('click', closeMenu);
+
+      // Nav indicator
+      const indicator = document.getElementById('navIndicator');
+      const navList = document.querySelector('.main-nav__list');
+      const navEl = document.getElementById('mainNav');
+      if (indicator && navList && navEl) {
+        const navRect = () => navEl.getBoundingClientRect();
+        const items = navList.querySelectorAll('li');
+
+        const moveIndicator = (li: Element) => {
+          const r = li.getBoundingClientRect();
+          const nr = navRect();
+          indicator.style.width = r.width + 'px';
+          indicator.style.transform = `translateX(${r.left - nr.left}px)`;
+        };
+
+        const hideIndicator = () => {
+          indicator.style.width = '0';
+        };
+
+        items.forEach(li => {
+          li.addEventListener('mouseenter', () => moveIndicator(li));
+        });
+        navList.addEventListener('mouseleave', hideIndicator);
+
+        // Position on active item initially
+        const active = navList.querySelector('li.active');
+        if (active) moveIndicator(active);
+      }
+
+      // Animate on scroll
+      const scrollObserver = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            e.target.classList.add('animate-visible');
+            scrollObserver.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.15 });
+      document.querySelectorAll('.animate-on-scroll').forEach(el => scrollObserver.observe(el));
+
+      // Parallax scrolling for background images
+      const parallaxElements = document.querySelectorAll('[data-parallax]');
+
+      function updateParallax() {
+        const scrollY = window.scrollY;
+        parallaxElements.forEach((el) => {
+          const rect = el.getBoundingClientRect();
+          const parent = el.closest('section, .cta-section') as HTMLElement;
+          if (!parent) return;
+          const parentRect = parent.getBoundingClientRect();
+          // Only process if section is near viewport
+          if (parentRect.bottom < -200 || parentRect.top > window.innerHeight + 200) return;
+          const ratio = parseFloat((el as HTMLElement).dataset.parallaxRatio || '0.15');
+          const offset = scrollY * ratio;
+          (el as HTMLElement).style.transform = `translate3d(0, ${offset}px, 0)`;
+        });
+      }
+
+      window.addEventListener('scroll', updateParallax, { passive: true });
+      updateParallax();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,61 @@
+---
+interface Props {
+  name: string;
+  role: string;
+  image: string;
+}
+
+const { name, role, image } = Astro.props;
+---
+
+<article class="team-member">
+  <div class="team-member__header">
+    <div class="team-member__image">
+      <img src={image} alt={name} />
+    </div>
+  </div>
+  <div class="team-member__content">
+    <p class="team-member__role">{role}</p>
+    <h4 class="team-member__name">{name}</h4>
+  </div>
+</article>
+
+<style>
+  .team-member {
+    background-color: var(--color-bg-primary);
+    overflow: hidden;
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%);
+  }
+  .team-member__header {
+    display: block;
+    position: relative;
+    overflow: hidden;
+  }
+  .team-member__image {
+    position: relative;
+    background-color: var(--color-bg-primary);
+  }
+  .team-member__image img {
+    width: 100%;
+    aspect-ratio: 16/11;
+    object-fit: cover;
+    display: block;
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%);
+  }
+  /* Content */
+  .team-member__content {
+    padding: 16px 20px 20px;
+  }
+  .team-member__role {
+    font-family: var(--font-heading);
+    font-size: 0.7rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.5);
+    margin-bottom: 4px;
+  }
+  .team-member__name {
+    font-size: 1rem;
+    margin-bottom: 0;
+  }
+</style>

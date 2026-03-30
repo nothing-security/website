@@ -1,0 +1,70 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHeader from '../components/PageHeader.astro';
+import ContactForm from '../components/ContactForm.astro';
+---
+
+<BaseLayout title="Contact us">
+  <PageHeader
+    title="Contact Us"
+    backgroundImage="/images/home2-bg-contacts.jpg"
+  />
+
+  <section class="section section--paper">
+    <div class="container">
+      <div class="two-col">
+        <div>
+          <div class="section-caption" style="text-align:left;">
+            <h6 class="section-caption__label"><span>Get In Touch</span></h6>
+            <h2>Our Contacts</h2>
+          </div>
+
+          <div class="contact-info">
+            <div class="contact-info__item">
+              <span class="material-icons">phone</span>
+              <div>
+                <h5>Phone</h5>
+                <p>Hotline: 248.434.5508</p>
+              </div>
+            </div>
+            <div class="contact-info__item">
+              <span class="material-icons">email</span>
+              <div>
+                <h5>Email</h5>
+                <p>contact@nothingsecurity.com</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <ContactForm />
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .contact-info {
+    margin-top: 30px;
+  }
+  .contact-info__item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+  .contact-info__item .material-icons {
+    font-size: 28px;
+    color: var(--color-accent);
+    margin-top: 2px;
+  }
+  .contact-info__item h5 {
+    margin-bottom: 4px;
+  }
+  .contact-info__item p {
+    margin: 0;
+    color: var(--color-text);
+  }
+</style>

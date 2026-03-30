@@ -1,0 +1,680 @@
+---
+// This page is designed to be printed/saved as a PDF
+// Visit /industry-outlook-2026/ and use browser Print > Save as PDF
+---
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Nothing Security - 2026 Industry Outlook</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;700&family=Rubik:wght@400;500;700&display=swap');
+
+    @page {
+      size: letter;
+      margin: 0;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Karla', Helvetica, Arial, sans-serif;
+      color: #222;
+      background: #fff;
+      font-size: 10pt;
+      line-height: 1.5;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .page {
+      width: 8.5in;
+      height: 11in;
+      padding: 0;
+      margin: 0 auto;
+      position: relative;
+      overflow: hidden;
+      page-break-after: always;
+      page-break-inside: avoid;
+    }
+
+    /* === Page 1: Cover + Key Findings === */
+    .page-1-header {
+      background: linear-gradient(135deg, #0a0a1a 0%, #1a0040 40%, #0d3366 100%);
+      color: #fff;
+      padding: 0.35in 0.7in 0.25in;
+      position: relative;
+    }
+    .page-1-header::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, #00a2ff, #5c20ef);
+    }
+    .report-type {
+      font-family: 'Rubik', sans-serif;
+      font-size: 8pt;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: #00a2ff;
+      margin-bottom: 4px;
+    }
+    .report-title {
+      font-family: 'Rubik', sans-serif;
+      font-size: 22pt;
+      font-weight: 700;
+      line-height: 1.1;
+      margin-bottom: 4px;
+    }
+    .report-subtitle {
+      font-size: 10pt;
+      color: rgba(255,255,255,0.75);
+      margin-bottom: 8px;
+    }
+    .report-meta {
+      font-size: 8pt;
+      color: rgba(255,255,255,0.5);
+    }
+    .logo-area {
+      position: absolute;
+      top: 0.6in;
+      right: 0.7in;
+    }
+    .logo-area img {
+      height: 64px;
+    }
+
+    .page-body {
+      padding: 0.25in 0.7in 0.3in;
+    }
+
+    h2 {
+      font-family: 'Rubik', sans-serif;
+      font-size: 11pt;
+      font-weight: 700;
+      color: #1a0040;
+      margin-bottom: 5px;
+      padding-bottom: 3px;
+      border-bottom: 2px solid #00a2ff;
+    }
+
+    h3 {
+      font-family: 'Rubik', sans-serif;
+      font-size: 10pt;
+      font-weight: 700;
+      color: #1a0040;
+      margin-bottom: 8px;
+      margin-top: 10px;
+      padding-bottom: 4px;
+      border-bottom: 2px solid #00a2ff;
+    }
+
+    p { margin-bottom: 4px; font-size: 9pt; }
+
+    .key-finding {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 10px;
+      align-items: flex-start;
+    }
+    .key-finding:first-of-type {
+      margin-top: 8px;
+    }
+    .key-finding__number {
+      font-family: 'Rubik', sans-serif;
+      font-size: 16pt;
+      font-weight: 700;
+      color: #00a2ff;
+      line-height: 1;
+      flex-shrink: 0;
+      width: 30px;
+      text-align: center;
+    }
+    .key-finding__text {
+      flex: 1;
+    }
+    .key-finding__text strong {
+      display: block;
+      font-family: 'Rubik', sans-serif;
+      font-size: 9pt;
+      color: #1a0040;
+      margin-bottom: 1px;
+    }
+    .key-finding__text span {
+      font-size: 8pt;
+      color: #555;
+    }
+
+    .stat-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 6px;
+      margin: 8px 0;
+    }
+    .stat-box {
+      background: #f4f0ff;
+      padding: 4px 5px;
+      text-align: center;
+      border-left: 3px solid #5c20ef;
+    }
+    .stat-box var {
+      font-family: 'Rubik', sans-serif;
+      font-style: normal;
+      font-size: 16pt;
+      font-weight: 700;
+      color: #1a0040;
+      display: block;
+    }
+    .stat-box span {
+      font-size: 6.5pt;
+      color: #666;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .stat-box--red {
+      border-left-color: #cc0000;
+    }
+    .stat-box--red var {
+      color: #cc0000;
+    }
+
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 12px 0;
+      font-size: 9pt;
+    }
+    .comparison-table th {
+      background: #1a0040;
+      color: #fff;
+      padding: 4px 8px;
+      text-align: left;
+      font-family: 'Rubik', sans-serif;
+      font-size: 7pt;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .comparison-table td {
+      padding: 3px 8px;
+      border-bottom: 1px solid #e0e0e0;
+      font-size: 8pt;
+    }
+    .comparison-table tr:nth-child(even) td {
+      background: #f9f7ff;
+    }
+    .comparison-table .fail {
+      color: #cc0000;
+      font-weight: 700;
+    }
+    .comparison-table .pass {
+      color: #2e7d32;
+      font-weight: 700;
+    }
+
+    .callout {
+      background: linear-gradient(135deg, #0a0a1a, #1a0040);
+      color: #fff;
+      padding: 13px 21px;
+      margin: 10px 0;
+      font-size: 12pt;
+      line-height: 1.45;
+    }
+    .callout strong {
+      color: #00a2ff;
+    }
+
+    .footer-bar {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      padding: 8px 0.7in;
+      background: #f5f5f5;
+      font-size: 7pt;
+      color: #999;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+    }
+
+    .source {
+      font-size: 7pt;
+      color: #999;
+      margin-top: 2px;
+    }
+
+    /* === Nothing Illusion Quadrant === */
+    .mq {
+      position: relative;
+      width: 100%;
+      margin: 4px auto 8px;
+      padding-left: 0.2in;
+    }
+    .mq__grid {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      border: 1px solid #ccc;
+    }
+    /* dots positioned below with left offset */
+    .mq__ylabel {
+      position: absolute;
+      left: 6px;
+      top: 50%;
+      transform: rotate(-90deg) translateX(-50%);
+      transform-origin: left center;
+      font-family: 'Rubik', sans-serif;
+      font-size: 6pt;
+      color: #999;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      white-space: nowrap;
+    }
+    .mq__xlabel {
+      position: absolute;
+      bottom: -14px;
+      left: calc(0.2in + 50%);
+      transform: translateX(-50%);
+      font-family: 'Rubik', sans-serif;
+      font-size: 6pt;
+      color: #999;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      white-space: nowrap;
+    }
+    /* grid defined above with aspect-ratio */
+    .mq__q {
+      position: relative;
+    }
+    .mq__q--tl { background: #f8f8f8; border-right: 1px solid #ddd; border-bottom: 1px solid #ddd; }
+    .mq__q--tr { background: #eef5ff; border-bottom: 1px solid #ddd; }
+    .mq__q--bl { background: #fff3f3; border-right: 1px solid #ddd; }
+    .mq__q--br { background: #f8f8f8; }
+    .mq__qlabel {
+      position: absolute;
+      font-family: 'Rubik', sans-serif;
+      font-size: 6.5pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    .mq__q--tr .mq__qlabel { top: 4px; right: 6px; color: #00a2ff; }
+    .mq__q--tl .mq__qlabel { top: 4px; left: 6px; color: #aaa; }
+    .mq__q--bl .mq__qlabel { bottom: 4px; left: 6px; color: #cc0000; }
+    .mq__q--br .mq__qlabel { bottom: 4px; right: 6px; color: #996600; }
+    .mq__dots {
+      position: absolute;
+      top: 0;
+      left: 0.2in;
+      right: 0;
+      bottom: 0;
+      pointer-events: none;
+    }
+    .mq__dot {
+      position: absolute;
+      font-family: 'Rubik', sans-serif;
+      font-size: 5.5pt;
+      font-weight: 500;
+      color: #333;
+      white-space: nowrap;
+      padding-left: 10px;
+      line-height: 1;
+    }
+    .mq__dot::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 50%;
+      transform: translateY(-50%);
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #5c20ef;
+      border: 1px solid #fff;
+    }
+    .mq__dot--hero {
+      font-size: 7pt;
+      font-weight: 700;
+      color: #00a2ff;
+      padding-left: 16px;
+    }
+    .mq__dot--hero::before {
+      width: 12px;
+      height: 12px;
+      background: linear-gradient(135deg, #00a2ff, #5c20ef);
+      box-shadow: 0 0 8px rgba(0,162,255,0.5);
+      border: 2px solid #fff;
+    }
+    .mq__dot--left {
+      padding-left: 0;
+      padding-right: 16px;
+      text-align: right;
+      transform: translateX(-100%);
+      margin-left: 12px;
+    }
+    .mq__dot--left::before {
+      left: auto;
+      right: 0;
+    }
+
+    @media screen {
+      body { background: #e0e0e0; padding: 20px 0; }
+      .page { box-shadow: 0 2px 20px rgba(0,0,0,0.2); margin-bottom: 20px; }
+      .no-print { display: block; }
+    }
+    @media screen and (max-width: 8.5in) {
+      .page {
+        width: 100%;
+        height: auto;
+        min-height: auto;
+      }
+      .page-body {
+        padding: 0.3in 0.4in 0.4in;
+      }
+      .page-1-header {
+        padding: 0.3in 0.4in 0.25in;
+      }
+      .download-bar {
+        width: 100%;
+      }
+      .two-col {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+      .stat-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+      .report-title {
+        font-size: 18pt;
+      }
+      .logo-area {
+        top: 0.2in;
+        right: 0.3in;
+      }
+      .logo-area img {
+        height: 36px;
+      }
+      .mq {
+        margin-bottom: 20px;
+      }
+    }
+    @media print {
+      .no-print { display: none; }
+    }
+
+    .download-bar {
+      width: 8.5in;
+      margin: 0 auto 20px;
+      text-align: center;
+      padding: 12px;
+      background: #1a0040;
+      color: #fff;
+      font-family: 'Rubik', sans-serif;
+      font-size: 11pt;
+    }
+    .download-bar a {
+      color: #00a2ff;
+      cursor: pointer;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="download-bar no-print">
+    <a onclick="window.print()">Print / Save as PDF</a> &mdash; Nothing Security 2026 Industry Outlook
+  </div>
+
+  <!-- PAGE 1 -->
+  <div class="page">
+    <div class="page-1-header">
+      <div class="logo-area">
+        <img src="/images/nothingsecurity-logo-72.png" alt="Nothing Security" />
+      </div>
+      <p class="report-type">Industry Analysis &bull; 2026</p>
+      <h1 class="report-title">The State of<br />Cybersecurity Futility</h1>
+      <p class="report-subtitle">Why $213 Billion in Security Spending Has Made Things Worse, Not Better</p>
+      <p class="report-meta">Nothing Security Research &bull; Published March 2026</p>
+    </div>
+
+    <div class="page-body">
+      <h2>Executive Summary</h2>
+      <p>The cybersecurity industry has achieved something remarkable: a sustained, multi-year demonstration that increased spending produces worse outcomes. Global security spending has grown 122% since 2018, while cybercrime losses have grown 600%. For every dollar organizations spend on security, they now lose fifty dollars to cybercrime. This report examines the data behind the industry's most expensive failures.</p>
+
+      <div class="stat-grid">
+        <div class="stat-box">
+          <var>$213B</var>
+          <span>2025 Security Spending (Gartner)</span>
+        </div>
+        <div class="stat-box stat-box--red">
+          <var>$10.5T</var>
+          <span>2025 Cybercrime Losses</span>
+        </div>
+        <div class="stat-box stat-box--red">
+          <var>1:50</var>
+          <span>Spend-to-Loss Ratio</span>
+        </div>
+      </div>
+
+      <div class="two-col">
+        <div>
+          <h2>Key Findings</h2>
+          <div class="key-finding">
+            <div class="key-finding__number">01</div>
+            <div class="key-finding__text">
+              <strong>Security Tools Make You Less Secure</strong>
+              <span>The average enterprise deploys 76 discrete security tools. ISACA research shows organizations with 50+ tools are 8% worse at detecting threats. Proliferation degrades outcomes.</span>
+            </div>
+          </div>
+          <div class="key-finding">
+            <div class="key-finding__number">02</div>
+            <div class="key-finding__text">
+              <strong>The Products Protecting You Are the Attack Surface</strong>
+              <span>CrowdStrike's Falcon Sensor crashed 8.5M systems in July 2024, costing the Fortune 500 $5.4B in a single day. The security product is often the vulnerability.</span>
+            </div>
+          </div>
+          <div class="key-finding">
+            <div class="key-finding__number">03</div>
+            <div class="key-finding__text">
+              <strong>Cloud Native Security Is Theater</strong>
+              <span>AWS, Azure, and GCP native firewalls all scored 0% Security Effectiveness in CyberRatings.org testing (April 2025). Your cloud provider's security is indistinguishable from Nothing.</span>
+            </div>
+          </div>
+          <div class="key-finding">
+            <div class="key-finding__number">04</div>
+            <div class="key-finding__text">
+              <strong>Training Doesn't Work. It Got Worse.</strong>
+              <span>Phishing click rates tripled in 2024 (Netskope). 65% of employees bypass security policies for productivity (CyberArk). They are users, and they have work to do.</span>
+            </div>
+          </div>
+          <div class="key-finding">
+            <div class="key-finding__number">05</div>
+            <div class="key-finding__text">
+              <strong>Your SIEM Is an Expensive Noise Generator</strong>
+              <span>53% of SIEM alerts are false positives. 30% of all alerts go uninvestigated. Organizations face 960 alerts daily. You're paying for an alarm that cries wolf.</span>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h2 style="margin-bottom: 12px;">Illusion Quadrant&trade; For Cybersecurity</h2>
+          <div class="mq">
+            <div class="mq__ylabel">Ease of Implementation &rarr;</div>
+            <div class="mq__xlabel">Cost Effectiveness &rarr;</div>
+            <div class="mq__grid">
+              <div class="mq__q mq__q--tl"><span class="mq__qlabel">WASTEFUL</span></div>
+              <div class="mq__q mq__q--tr"><span class="mq__qlabel">OBVIOUS</span></div>
+              <div class="mq__q mq__q--bl"><span class="mq__qlabel">FUTILE</span></div>
+              <div class="mq__q mq__q--br"><span class="mq__qlabel">PAINFUL</span></div>
+            </div>
+            <div class="mq__dots">
+              <span class="mq__dot mq__dot--hero mq__dot--left" style="left:85%;top:8%;">Do Nothing&trade;</span>
+              <span class="mq__dot" style="left:13%;top:77%;">SIEM/SOC</span>
+              <span class="mq__dot" style="left:5%;top:43%;">DLP</span>
+              <span class="mq__dot" style="left:27%;top:87%;">EDR</span>
+              <span class="mq__dot" style="left:47%;top:30%;">Sec Training</span>
+              <span class="mq__dot" style="left:17%;top:63%;">Compliance</span>
+              <span class="mq__dot" style="left:33%;top:73%;">Cloud FW</span>
+              <span class="mq__dot" style="left:53%;top:57%;">Pen Testing</span>
+              <span class="mq__dot" style="left:63%;top:43%;">Cyber Insurance</span>
+            </div>
+          </div>
+          <p style="font-size:8pt; color:#444; margin-top: 30px; margin-left: 0.2in; line-height: 1.76; text-align: justify;">The Illusion Quadrant&trade; plots cybersecurity product categories by ease of implementation and cost effectiveness. Nearly every category clusters in the Futile and Wasteful quadrants &mdash; expensive to deploy, difficult to maintain, and demonstrably ineffective. Only Do Nothing&trade; occupies the Obvious quadrant: zero cost, zero complexity, and outcomes statistically indistinguishable from the alternatives.</p>
+        </div>
+      </div>
+
+      <div class="callout">
+        <strong>Recommendation:</strong> Discontinue expenditures on security categories with demonstrated negative ROI. Redirect budget to cyber insurance, incident response retainers, and executive beach vacations.
+      </div>
+    </div>
+    <div class="footer-bar">
+      <span>&copy; 2026 Nothing Security &mdash; Total Security Oversight</span>
+      <span>Page 1 of 2</span>
+    </div>
+  </div>
+
+  <!-- PAGE 2 -->
+  <div class="page">
+    <div class="page-body" style="padding-top: 0.45in;">
+      <h2>Product Category Failure Analysis</h2>
+
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>Security Category</th>
+            <th>Key Failure Metric</th>
+            <th>Source</th>
+            <th>Verdict</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Cloud Firewalls</strong></td>
+            <td>0% effectiveness (all 3 hyperscalers)</td>
+            <td>CyberRatings.org, 2025</td>
+            <td class="fail">INEFFECTIVE</td>
+          </tr>
+          <tr>
+            <td><strong>EDR / Endpoint</strong></td>
+            <td>82% of detections are malware-free; EDR routinely bypassed</td>
+            <td>CrowdStrike GTR 2026</td>
+            <td class="fail">INEFFECTIVE</td>
+          </tr>
+          <tr>
+            <td><strong>DLP</strong></td>
+            <td>50% of orgs rate DLP ineffective; 1% of users cause 90% of alerts</td>
+            <td>Proofpoint / Fortinet, 2024</td>
+            <td class="fail">INEFFECTIVE</td>
+          </tr>
+          <tr>
+            <td><strong>SIEM / SOC</strong></td>
+            <td>53% false positive rate; 30% of alerts uninvestigated</td>
+            <td>Devo SOC Report, 2024</td>
+            <td class="fail">INEFFECTIVE</td>
+          </tr>
+          <tr>
+            <td><strong>Security Training</strong></td>
+            <td>Phishing clicks tripled in 2024; 65% bypass policies anyway</td>
+            <td>Netskope / CyberArk, 2024</td>
+            <td class="fail">INEFFECTIVE</td>
+          </tr>
+          <tr>
+            <td><strong>Compliance</strong></td>
+            <td>60% of breaches from known, patched vulns; compliance didn't catch it</td>
+            <td>Verizon DBIR, 2025</td>
+            <td class="fail">INEFFECTIVE</td>
+          </tr>
+          <tr>
+            <td><strong>Do Nothing&trade;</strong></td>
+            <td>$0 cost; 0 false positives; 0 outages caused</td>
+            <td>Nothing Security, 2026</td>
+            <td class="pass">EFFECTIVE</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="two-col">
+        <div>
+          <h3 style="margin-top:6px;">The Security Vendor Paradox</h3>
+          <p style="font-size:8pt;">In 2024, these security companies were themselves compromised or caused major incidents:</p>
+          <ul style="padding-left: 14px; margin: 6px 0; list-style: disc; font-size: 8pt; line-height: 1.6;">
+            <li><strong>CrowdStrike</strong> &mdash; Faulty update crashed 8.5M systems, $5.4B in damages</li>
+            <li><strong>Microsoft</strong> &mdash; Breached by Russia via weak password with no MFA</li>
+            <li><strong>Okta</strong> &mdash; All customer support data exposed; auth bypass flaw discovered</li>
+            <li><strong>Fortinet</strong> &mdash; FortiManager zero-day (CVSS 9.8), 50+ orgs compromised</li>
+            <li><strong>Palo Alto</strong> &mdash; PAN-OS zero-day exploited by state actors since March 2024</li>
+            <li><strong>Ivanti</strong> &mdash; VPN zero-day achieved full domain compromise, 2,100+ users including gov't</li>
+            <li><strong>Snowflake</strong> &mdash; 100+ customer accounts exfiltrated including AT&T, Ticketmaster</li>
+          </ul>
+          <div style="position:relative; margin-top: 14px; padding: 14px; background: #f9f7ff; border-left: 3px solid #5c20ef;">
+            <img src="/images/nothingsecurity-icon.png" alt="" style="position:absolute; right:8px; bottom:4px; height:60px; opacity:0.12;" />
+            <p style="font-size:11pt; font-weight:700; color:#1a0040; margin:0; line-height:1.3;"><em>If security vendors can't secure themselves, what exactly are you paying for?</em></p>
+          </div>
+          <p style="font-size: 18pt; font-weight: 700; color: #1a0040; margin-top: 32px; font-family: 'Rubik', sans-serif; letter-spacing: 0.02em; text-align: center;">It's time to <span style="color: #00a2ff;">Do Nothing&trade;</span>.</p>
+        </div>
+        <div>
+          <h3 style="margin-top:6px;">ROI: Do Nothing&trade; vs. Industry Metrics</h3>
+          <div class="stat-grid" style="grid-template-columns: 1fr 1fr;">
+            <div class="stat-box">
+              <var>$0</var>
+              <span>Do Nothing&trade;:<br />Annual Cost</span>
+            </div>
+            <div class="stat-box stat-box--red">
+              <var>$1,070</var>
+              <span>Industry:<br />Cost / Employee</span>
+            </div>
+            <div class="stat-box">
+              <var>0</var>
+              <span>Do Nothing&trade;:<br />False Positives</span>
+            </div>
+            <div class="stat-box stat-box--red">
+              <var>960/day</var>
+              <span>Industry:<br />Daily Alerts</span>
+            </div>
+            <div class="stat-box">
+              <var>0</var>
+              <span>Do Nothing&trade;:<br />Tools to Manage</span>
+            </div>
+            <div class="stat-box stat-box--red">
+              <var>76</var>
+              <span>Industry:<br />Avg Security Tools</span>
+            </div>
+            <div class="stat-box">
+              <var>0</var>
+              <span>Do Nothing&trade;:<br />Outages Caused</span>
+            </div>
+            <div class="stat-box stat-box--red">
+              <var>8.5M</var>
+              <span>Industry:<br />Systems Crashed</span>
+            </div>
+          </div>
+
+          <h3>Strategic Recommendation</h3>
+          <p style="font-size:9pt; text-align:justify; line-height: 1.5;">Organizations should evaluate whether their current security posture measurably outperforms doing nothing. Based on available evidence across every major product category, the answer is <strong>no</strong>. The cybersecurity industry's only consistent output is invoices.</p>
+        </div>
+      </div>
+
+      <div class="callout" style="margin-top: 8px; position: relative; overflow: hidden;">
+        <img src="/images/nothingsecurity-icon.png" alt="" style="position: absolute; right: -20px; top: 50%; transform: translateY(-50%); height: 120px; opacity: 0.3;" />
+        <span style="position: relative; z-index: 1;"><strong>About Nothing Security:</strong> Nothing Security provides Total Security Oversight solutions for enterprises of any size. Our products require zero configuration, generate zero false positives, and have never been compromised. Visit <strong>nothingsecurity.com</strong> for more information.</span>
+      </div>
+
+      <p class="source" style="margin-top: 6px; font-size: 6pt;">
+        Sources: Gartner (2025), Cybersecurity Ventures (2025), Verizon DBIR (2025), IBM Cost of Data Breach (2025), CyberRatings.org (2025), CrowdStrike GTR (2026), Netskope (2024), ISACA (2025), Proofpoint (2024), CyberArk (2024), Devo (2024), HackerOne (2024).
+      </p>
+    </div>
+    <div class="footer-bar">
+      <span>&copy; 2026 Nothing Security &mdash; nothingsecurity.com</span>
+      <span>Page 2 of 2</span>
+    </div>
+  </div>
+</body>
+</html>

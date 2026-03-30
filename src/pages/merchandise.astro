@@ -1,0 +1,215 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHeader from '../components/PageHeader.astro';
+---
+
+<BaseLayout title="Merchandise">
+  <PageHeader
+    title="MERCHANDISE"
+    subtitle="Wear Nothing. Say Everything."
+    backgroundImage="/images/header-customizer.jpg"
+  />
+
+  <section class="section section--paper">
+    <div class="container">
+      <div class="merch-intro">
+        <h2>Do Nothing&trade; In Style</h2>
+        <p>Now you can show the world you've stopped wasting money on cybersecurity theater. Our official Do Nothing&trade; merchandise lets everyone know you've read the data, done the math, and made the only rational choice.</p>
+      </div>
+
+      <div class="spacer-m"></div>
+
+      <div class="merch-product">
+        <div class="merch-carousel">
+          <div class="merch-carousel__track">
+            <div class="merch-carousel__slide"><img src="/images/merch-shirt-1.jpg" alt="Do Nothing T-Shirt - Black Front" /></div>
+            <div class="merch-carousel__slide"><img src="/images/merch-shirt-3.jpg" alt="Do Nothing T-Shirt - Navy Front" /></div>
+            <div class="merch-carousel__slide"><img src="/images/merch-shirt-4.jpg" alt="Do Nothing T-Shirt - Back" /></div>
+            <div class="merch-carousel__slide"><img src="/images/merch-shirt-2.jpg" alt="Do Nothing T-Shirt - Dark Heather" /></div>
+            <div class="merch-carousel__slide" aria-hidden="true"><img src="/images/merch-shirt-1.jpg" alt="" /></div>
+          </div>
+        </div>
+        <div class="merch-product__info">
+          <h3>Do Nothing&trade; Tee</h3>
+          <p class="merch-product__tagline">The official uniform of cybersecurity risk acceptance.</p>
+          <p>Available in Black, Navy, and Dark Heather. Features the Do Nothing&trade; logo on the front and Nothing Security branding on the back, so they know who you work for as you walk away from your SIEM.</p>
+          <a href="https://hack.xxx/collections/infosuck/products/do-nothing" target="_blank" class="btn btn--primary">Shop Now</a>
+        </div>
+      </div>
+
+      <div class="spacer-l"></div>
+
+      <div class="merch-product merch-product--reverse">
+        <div class="merch-product__info">
+          <h3>Do Nothing&trade; Mug</h3>
+          <p class="merch-product__tagline">Sip coffee. Ignore alerts. Accept risk.</p>
+          <p>Black ceramic mug with the Do Nothing&trade; logo. Available in 11oz and 15oz. Perfect for your morning stand-up where you explain why you're not remediating that critical finding.</p>
+          <a href="https://hack.xxx/collections/infosuck/products/do-nothing-black-mug-11oz-15oz" target="_blank" class="btn btn--primary">Shop Now</a>
+        </div>
+        <div class="merch-carousel">
+          <div class="merch-carousel__track merch-carousel__track--alt">
+            <div class="merch-carousel__slide"><img src="/images/merch-mug-1.jpg" alt="Do Nothing Mug - Front" /></div>
+            <div class="merch-carousel__slide"><img src="/images/merch-mug-2.jpg" alt="Do Nothing Mug - Side" /></div>
+            <div class="merch-carousel__slide"><img src="/images/merch-mug-3.jpg" alt="Do Nothing Mug - Back" /></div>
+            <div class="merch-carousel__slide"><img src="/images/merch-mug-4.jpg" alt="Do Nothing Mug - Detail" /></div>
+            <div class="merch-carousel__slide" aria-hidden="true"><img src="/images/merch-mug-1.jpg" alt="" /></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="spacer-l"></div>
+
+      <div class="merch-cta">
+        <h3>Why Wear Nothing?</h3>
+        <div class="merch-reasons">
+          <div class="merch-reason">
+            <span class="material-icons">verified</span>
+            <div>
+              <h5>Conversation Starter</h5>
+              <p>Watch your CISO's face when they read your shirt. The truth hurts, but at least you'll look good delivering it.</p>
+            </div>
+          </div>
+          <div class="merch-reason">
+            <span class="material-icons">shield</span>
+            <div>
+              <h5>More Effective Than Your EDR</h5>
+              <p>82% of EDR detections are malware-free anyway. This shirt has the same detection rate and costs less per year.</p>
+            </div>
+          </div>
+          <div class="merch-reason">
+            <span class="material-icons">savings</span>
+            <div>
+              <h5>Better ROI Than Your SIEM</h5>
+              <p>53% of SIEM alerts are false positives. This shirt generates zero false positives and looks great at conferences.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="spacer-m"></div>
+
+      <div class="text-center">
+        <a href="https://hack.xxx/collections/infosuck/products/do-nothing" target="_blank" class="btn btn--primary btn--large">Browse the Collection</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .merch-intro {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  .merch-intro p {
+    font-size: 1.1rem;
+    color: var(--color-text);
+  }
+  .merch-product {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .merch-product--reverse {
+    direction: rtl;
+  }
+  .merch-product--reverse > * {
+    direction: ltr;
+  }
+  .merch-carousel {
+    overflow: hidden;
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%);
+    max-height: 300px;
+  }
+  .merch-carousel__track {
+    display: flex;
+    animation: merch-scroll 16s ease-in-out infinite;
+  }
+  .merch-carousel__track--alt {
+    animation-delay: -4s;
+  }
+  .merch-carousel__track:hover {
+    animation-play-state: paused;
+  }
+  .merch-carousel__slide {
+    min-width: 100%;
+    flex-shrink: 0;
+  }
+  .merch-carousel__slide img {
+    width: 100%;
+    height: 300px;
+    display: block;
+    object-fit: contain;
+    background: #f5f5f5;
+  }
+  @keyframes merch-scroll {
+    0%, 18% { transform: translateX(0); }
+    22%, 40% { transform: translateX(-100%); }
+    44%, 62% { transform: translateX(-200%); }
+    66%, 84% { transform: translateX(-300%); }
+    88%, 100% { transform: translateX(-400%); }
+  }
+  .merch-product__info h3 {
+    font-size: 1.8rem;
+    margin-bottom: 8px;
+  }
+  .merch-product__tagline {
+    font-family: var(--font-heading);
+    font-size: 0.85rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    margin-bottom: 16px;
+  }
+  .merch-product__info p {
+    margin-bottom: 12px;
+  }
+  .merch-product__info .btn {
+    margin-top: 8px;
+  }
+  .merch-cta h3 {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  .merch-reasons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+  }
+  .merch-reason {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+  }
+  .merch-reason .material-icons {
+    font-size: 28px;
+    color: var(--color-accent);
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .merch-reason h5 {
+    margin-bottom: 4px;
+  }
+  .merch-reason p {
+    font-size: 0.9rem;
+    color: var(--color-text);
+    margin: 0;
+  }
+  @media (max-width: 768px) {
+    .merch-product {
+      grid-template-columns: 1fr;
+    }
+    .merch-product--reverse {
+      direction: ltr;
+    }
+    .merch-carousel {
+      max-height: 280px;
+    }
+    .merch-reasons {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
